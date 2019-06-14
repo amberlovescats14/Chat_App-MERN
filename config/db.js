@@ -4,14 +4,18 @@ const db = config.get('mongoURI')
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db)
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useCreateIndex: true
+    })
+
 
     console.log(`MongoDB connected...`)
-  } catch(err) {
+  } catch (err) {
     console.error(err.message)
     // EXIT PROCESS WITH FAILURE
     process.exit(1)
   }
 }
 
-module.export = connectDB
+module.exports = connectDB
