@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://cami123:cami123@cluster1-ov200.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://cami123:cami123@cluster1-ov200.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
 }
