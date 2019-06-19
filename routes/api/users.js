@@ -41,12 +41,9 @@ router.post(
       }
 
       const avatar = gravatar.url(email, {
-        //size
         s: '200',
-        //rating
         r: 'pg',
-        // send default  if none
-        d: 'mm'
+        d: 'mp'
       });
 
       user = new User({
@@ -55,7 +52,7 @@ router.post(
         avatar,
         password
       });
-      //encrypt password
+
       const salt = await bcrypt.genSalt(10);
 
       user.password = await bcrypt.hash(password, salt);
@@ -67,7 +64,7 @@ router.post(
           id: user.id
         }
       };
-      // secret token
+
       jwt.sign(
         payload,
         config.get('jwtSecret'),
