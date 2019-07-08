@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Register = () => {
+const Register = (props) => {
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +16,8 @@ const Register = () => {
   const onSubmit = async e => {
     e.preventDefault()
     if(password !== password2) {
-      console.log(`Passwords donnot match!`)
+     
+    this.props.setAlert(`Passwords do not match`, 'danger')
     } else {
       console.log(`SUCCESS`)
       // const newUser = {
@@ -42,6 +44,7 @@ const Register = () => {
 
   return (
     <Fragment>
+  
     <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
