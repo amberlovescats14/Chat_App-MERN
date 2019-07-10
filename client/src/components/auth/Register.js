@@ -17,34 +17,16 @@ const Register = (props) => {
     e.preventDefault()
     if(password !== password2) {
      
-    this.props.setAlert(`Passwords do not match`, 'danger')
+    props.setAlert(`Passwords do not match`, 'danger')
     } else {
       console.log(`SUCCESS`)
-      // const newUser = {
-      //   name,
-      //   email,
-      //   password,
-      //   password2
-      // }
-      // try {
-      //   const config = {
-      //     headers: {
-      //       'Content-Type': 'application/json'
-      //     }
-      //   }
-      //   const body = JSON.stringify(newUser)
-      //   const res = await axios.post('/api/users', body, config)
-      //   console.log(res.data)
-      // } catch (error) {
-      //   console.error(error.message)
 
-      // }
     }
   }
 
   return (
     <Fragment>
-  
+      {console.log(props)}
     <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
