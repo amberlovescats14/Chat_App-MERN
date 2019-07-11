@@ -6,10 +6,9 @@ const Landing = () => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">dev_MERN Chat</h1>
+          <h1 className="x-large">Run With Confidence!</h1>
           <p className="lead">
-            Create a developer profile/portfolio, share posts and get help from
-            other developers
+            Focus On Your Goal, Dont Look In Any Direction But Ahead.
           </p>
           <div className="buttons">
             <Link to='/register' className="btn btn-primary">Sign Up</Link>

@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul>
         <li>
           <Link to='/'>
-            <i className='fas fa-code'/> DevConnector
+            <i className='fas fa-code'/> PACE
           </Link>
         </li>
         <li>
