@@ -6,8 +6,8 @@ import Landing from './components/layout/Landing'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './components/auth/Login'
 import Alert from './components/layout/Alert'
-import { settingAuthToken } from './util/setAuthToken'
-import { loadUser } from './redux/actions'
+import settingAuthToken from './util/setAuthToken'
+import { loadUser } from './redux/actions/Actions'
 import './App.css';
 
 
@@ -20,7 +20,8 @@ const App = () => {
   //useEffect is like a life cycle hook
   useEffect(()=> {
     store.dispatch(loadUser())
-  })
+  }, [])
+  // by giving this square brackets at the end it will only run once like a component did mount
   return (
   <BrowserRouter>
   <Fragment >
