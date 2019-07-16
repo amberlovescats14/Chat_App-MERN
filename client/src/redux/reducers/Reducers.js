@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 
 
 
-
+//! Check form validation
 export const setAlert = (state = [], action) => {
   switch (action.type) {
     case 'SET_ALERT':
@@ -14,10 +14,51 @@ export const setAlert = (state = [], action) => {
   }
 }
 
+//!AUTH
+const authInitialState = {
+  token: localStorage.getItem('token'),
+  isAuthenticated: null,
+  loading: true,
+  user: null
+}
+
+export const authFunc = (state = authInitialState, action) => {
+  switch(action.type){
+    case `USER_LOADED`:
+    return {
+      ...state,
+      isAuthenticated: true,
+      loading: false,
+      user: action.payload
+    }
+    case 'REGISTER_SUCCESS': 
+      localStorage.setItem('token', action.payload.token)
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true,
+        loading: false
+      };
+    case 'REGISTER_FAIL':
+    case `AUTH_ERROR`:
+      localStorage.removeItem('token')
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false
+      }
+    default:
+      return state
+  }
+}
+
+
 
 
 export default combineReducers({
-  alert: setAlert
+  alert: setAlert,
+  register: authFunc
 })
 
 //template 

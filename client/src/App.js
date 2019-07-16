@@ -1,17 +1,33 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter , Route, Switch } from 'react-router-dom'
+import store from './store'
 import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './components/auth/Login'
+import Alert from './components/layout/Alert'
+// import setAuthToken from './util/setAuthToken'
+import { loadUser } from './redux/actions'
 import './App.css';
 
-const App = () => 
+
+if(localStorage.token) {
+  setAuthToken(localStorage.token)
+}
+
+
+const App = () => {
+  //useEffect is like a life cycle hook
+  useEffect(()=> {
+    store.dispatch(loadUser())
+  })
+  return (
   <BrowserRouter>
   <Fragment >
   <Navbar/>
   <Route exact path='/' component={Landing}/>
   <section className="container">
+  <Alert />
     <Switch>
       <Route exact path='/register' component={RegisterContainer}/>
       <Route exact path='/login' component={Login}/>
@@ -19,5 +35,6 @@ const App = () =>
   </section>
   </Fragment>
   </BrowserRouter>
-
+  )
+}
 export default App;
