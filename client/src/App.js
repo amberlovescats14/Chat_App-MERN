@@ -6,13 +6,13 @@ import Landing from './components/layout/Landing'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './components/auth/Login'
 import Alert from './components/layout/Alert'
-// import setAuthToken from './util/setAuthToken'
+import { settingAuthToken } from './util/setAuthToken'
 import { loadUser } from './redux/actions'
 import './App.css';
 
 
 if(localStorage.token) {
-  setAuthToken(localStorage.token)
+  settingAuthToken(localStorage.token)
 }
 
 

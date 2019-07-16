@@ -1,6 +1,6 @@
 import uuid from 'uuid'
 import axios from 'axios'
-import setAuthToken from '../../util/setAuthToken'
+import settingAuthToken from '../../util/setAuthToken'
 
 
 export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
@@ -54,7 +54,7 @@ export const authFunc = ({name, email, password}) => async dispatch => {
 //!actions AUTH
 export const loadUser = () => async dispatch => {
   if(localStorage.token) {
-    setAuthToken(localStorage.token)
+    settingAuthToken(localStorage.token)
   }
   try {
     const res = await axios.get('/api/auth')
