@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 const Register = (props) => {
-
+console.log(`REGISTER`, props.isAuthenticated)
   const [formData, setFormData] = useState({
     name: '',
     email: '',

@@ -4,7 +4,7 @@ import { setAlert, authFunc} from '../redux/actions/Actions'
 
 const mapStateToProps = (state) => ({
   alert: state.alert,
-  isAuthenticated: state.isAuthenticated
+  isAuthenticated: state.register.isAuthenticated
   // register: state.register
 })
 
