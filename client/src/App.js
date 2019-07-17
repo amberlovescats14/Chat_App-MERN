@@ -5,6 +5,8 @@ import Navbar from './containers/NavBarContainer'
 import Landing from './components/layout/Landing'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './containers/LoginContainer'
+import Dashboard from './components/dashboard/Dashboard'
+import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import settingAuthToken from './util/setAuthToken'
 import { loadUser } from './redux/actions/Actions'
@@ -32,6 +34,7 @@ const App = () => {
     <Switch>
       <Route exact path='/register' component={RegisterContainer}/>
       <Route exact path='/login' component={Login}/>
+      <PrivateRoute exact path='/dashboard' component={Dashboard}/>
     </Switch>
   </section>
   </Fragment>
