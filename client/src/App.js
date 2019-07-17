@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter , Route, Switch } from 'react-router-dom'
 import store from './store'
-import Navbar from './components/layout/Navbar'
+import Navbar from './containers/NavBarContainer'
 import Landing from './components/layout/Landing'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './containers/LoginContainer'

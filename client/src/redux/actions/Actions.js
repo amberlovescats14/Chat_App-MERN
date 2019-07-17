@@ -101,3 +101,12 @@ export const loginFunc = (email, password) => async dispatch => {
 }
 
 
+//!LOG_OUT && CLEAR token and profile
+
+export const logout = () => dispatch => {
+  dispatch({
+    type: `LOGOUT`
+  })
+}
+
+
