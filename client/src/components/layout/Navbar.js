@@ -5,6 +5,12 @@ import PropTypes from 'prop-types';
 const Navbar = (props) => {
   const authLinks = (
     <ul>
+     <li>
+      <Link to='/dashboard'>
+      <i className='fas fa-user'/> 
+      <span className="hide-sm">User</span> 
+      </Link>  
+    </li>
     <li>
       <Link to='/'
       onClick={props.logout}>
@@ -12,6 +18,7 @@ const Navbar = (props) => {
         <span className="hide-sm">LogOut</span> 
       </Link>
     </li>
+
     </ul>
   )
 

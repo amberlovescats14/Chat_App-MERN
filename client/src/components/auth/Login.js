@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 
 const Login = (props) => {
-  console.log(`MAP ISAUTTH:`, props.isAuthenticated)
+  // console.log(`MAP ISAUTTH:`, props.isAuthenticated)
   //USE STATE
   const [formData, setFormData] = useState({
     email: '',
