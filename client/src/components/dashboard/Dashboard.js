@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import Spinner from '../layout/Spinner'
 import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
+  console.log(`DASHBOARD:`, props.profile)
   useEffect(()=> {
     props.getCurrentProfile()
   },[])
   return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
+    props.auth.loading && props.profile === null ? <Spinner/> : <Fragment>
+      TEST
+    </Fragment>
   )
 }
 
