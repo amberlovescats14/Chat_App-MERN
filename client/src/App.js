@@ -6,6 +6,7 @@ import Landing from './containers/LandingContainer'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './containers/LoginContainer'
 import Dashboard from './containers/DashboardContainer'
+import CreateProfile from './containers/CreateProfileContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import settingAuthToken from './util/setAuthToken'
@@ -35,6 +36,7 @@ const App = () => {
       <Route exact path='/register' component={RegisterContainer}/>
       <Route exact path='/login' component={Login}/>
       <PrivateRoute exact path='/dashboard' component={Dashboard}/>
+      <PrivateRoute exact path='/create-profile' component={CreateProfile}/>
     </Switch>
   </section>
   </Fragment>
