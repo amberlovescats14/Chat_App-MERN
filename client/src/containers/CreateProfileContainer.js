@@ -1,6 +1,6 @@
 import CreateProfile from '../components/profile-form/CreateProfile'
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { createProfile } from '../redux/actions/Actions'
 
 // const mapStateToProps = (state) => ({

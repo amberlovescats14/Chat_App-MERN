@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../layout/Spinner'
+import DashboardFunction from './DashboardFunction'
 import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
@@ -18,7 +19,7 @@ const Dashboard = (props) => {
       {/* This wills show weather the user has a profile or not */}
       {props.profile !== null ?
       <Fragment>
-        has
+        <DashboardFunction/>
       </Fragment> :
       <Fragment>
         <p>You have not setup a profile, please add some info!</p>

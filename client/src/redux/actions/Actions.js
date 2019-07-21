@@ -146,7 +146,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
       type: `GET_PROFILE`,
       payload: res.data
     });
-    dispatch(setAlert(edit ? `Profile Updated!` : `Profile Created!`))
+    dispatch(setAlert(edit ? `Profile Updated!` : `Profile Created!`, 'success'))
 
     //Only if we are creating a new profile will we redirect. Not editing
     if(!edit) {
