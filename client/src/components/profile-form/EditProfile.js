@@ -85,9 +85,9 @@ const EditProfile = (props) => {
         <li><a href="posts.html">Posts</a></li>
         <li>
           |
-          <a href="dashboard.html" title="Dashboard"
+          <Link to='/dashboard' title="Dashboard"
             ><i className="fas fa-user"></i>
-            <span className="hide-sm">Dashboard</span></a
+            <span className="hide-sm">Dashboard</span></Link
           >
         </li>
         <li>

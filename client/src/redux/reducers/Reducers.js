@@ -44,6 +44,7 @@ export const authFunc = (state = authInitialState, action) => {
     case `AUTH_ERROR`:
     case `LOGIN_FAIL`:
     case `LOGOUT`:
+    case `ACCOUNT_DELETED`:
       localStorage.removeItem('token')
       return {
         ...state,
@@ -74,7 +75,13 @@ export const getCurrentProfile = (state = profileState, action) => {
       profile: payload,
       loading: false
     }
-
+    //PLURAL
+    case `GET_PROFILES`: 
+    return {
+      ...state,
+      profiles: payload,
+      loading: false
+    }
     case `PROFILE_ERROR`:
     return {
       ...state,
@@ -86,6 +93,12 @@ export const getCurrentProfile = (state = profileState, action) => {
       ...state,
       profile: null,
       repos: [],
+      loading: false
+    }
+    case `GET_REPOS`: 
+    return {
+      ...state,
+      repos: payload,
       loading: false
     }
     default: 
@@ -101,9 +114,4 @@ export default combineReducers({
   getCurrentProfile
 })
 
-//template 
-//   {
-//     id: 1,
-//     msg:`Passwords donnot match`,
-//      alertType: `Danger`
-//   }
+

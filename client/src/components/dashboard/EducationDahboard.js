@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 
 const EducationDashboard = props => {
-  const { education } = props
+  const { education, deleteEducation } = props
 
   const educations = education.map(exp => (
     <tr key={exp._id}>
@@ -17,7 +17,8 @@ const EducationDashboard = props => {
          (<Moment format='YYYY/MM/DD'>{exp.to}</Moment>)}
       </td>
       <td>
-        <button className="btn btn-danger">Delete</button>
+        <button className="btn btn-danger"
+        onClick={()=> deleteEducation(exp._id)}>Delete</button>
       </td>
     </tr>
   ))
@@ -42,6 +43,7 @@ const EducationDashboard = props => {
 
 EducationDashboard.propTypes = {
   education : PropTypes.array.isRequired,
+  deleteEducation: PropTypes.func.isRequired,
 }
 
 export default EducationDashboard

@@ -10,6 +10,7 @@ import CreateProfile from './containers/CreateProfileContainer'
 import EditProfile from './containers/EditProfileContainer'
 import AddExperience from './containers/AddExperienceContainer'
 import AddEducation from './containers/AddEducationContainer'
+import Profiles from './containers/profiles/ProfilesContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import settingAuthToken from './util/setAuthToken'
@@ -38,6 +39,7 @@ const App = () => {
     <Switch>
       <Route exact path='/register' component={RegisterContainer}/>
       <Route exact path='/login' component={Login}/>
+      <Route exact path='/profiles' component={Profiles}/>
       <PrivateRoute exact path='/dashboard' component={Dashboard}/>
       <PrivateRoute exact path='/create-profile' component={CreateProfile}/>
       <PrivateRoute exact path='/edit-profile' component={EditProfile}/>

@@ -5,6 +5,7 @@ import DashboardFunction from './DashboardFunction'
 import ExperienceDashboard from '../../containers/ExperienceDashboardContainer'
 import EducationDashboard from '../../containers/EducationDashboardContainer'
 import PropTypes from 'prop-types'
+import { deleteAccount } from '../../redux/actions/Actions';
 
 const Dashboard = (props) => {
   useEffect(()=> {
@@ -23,6 +24,13 @@ const Dashboard = (props) => {
         <DashboardFunction/>
         <ExperienceDashboard />
         <EducationDashboard/>
+
+        <div className="my-2">
+        <button className="btn btn-danger"
+        onClick={()=> props.deleteAccount()}>
+        <i className="fas fa-user-minus"></i> Delete My Account
+        </button>
+        </div>
       </Fragment> :
       <Fragment>
         <p>You have not setup a profile, please add some info!</p>
@@ -36,7 +44,8 @@ const Dashboard = (props) => {
 Dashboard.propTypes = {
  getCurrentProfile: PropTypes.func.isRequired,
  auth: PropTypes.object.isRequired,
- profile: PropTypes.object.isRequired
+ profile: PropTypes.object.isRequired,
+ deleteAccount: PropTypes.func.isRequired,
 }
 
 export default Dashboard

@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 const Navbar = (props) => {
   const authLinks = (
     <ul>
+      <li>
+      <Link to='/profiles'>Developers</Link>
+    </li>
      <li>
       <Link to='/dashboard'>
       <i className='fas fa-user'/> 
@@ -26,6 +29,10 @@ const Navbar = (props) => {
 
   const guestLinks = (
     <ul>
+        <li>
+      <Link to='/profiles'>Developers</Link>
+    </li>
+
     <li>
       <Link to='/'>
         <i className='fas fa-code'/> PACE
@@ -47,7 +54,7 @@ console.log(`IN THE NAV`, props.auth)
   return (
     <nav className="navbar bg-dark">
       <h1>
-        <a href="index.html"><i className="fas fa-code"></i> Amber Jones</a>
+        <Link to='/'><i className="fas fa-code"></i> Amber Jones</Link>
       </h1>
     {!props.auth.loading &&  (<Fragment>
       {props.auth.isAuthenticated ? authLinks : guestLinks}

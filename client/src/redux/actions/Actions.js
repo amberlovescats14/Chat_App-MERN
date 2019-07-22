@@ -129,6 +129,63 @@ export const getCurrentProfile = () => async dispatch => {
   }
 }
 
+
+//! GET ALL PROFILES
+export const getProfiles = () => async dispatch => {
+  //clear all before seeing all profiles
+  dispatch({
+    type: `CLEAR_PROFILE`
+  })
+
+  try {
+    const res = await axios.get('/api/profile')
+    //PLURAL PROFILES
+    dispatch({
+      type: `GET_PROFILES`,
+      payload: res.data
+    })
+  } catch (err) {
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
+//! GET PROFILE BY ID
+export const getProfileById = (userId) => async dispatch => {
+  
+  try {
+    const res = await axios.get(`/api/profile/user/${userId}`)
+    //PLURAL PROFILES
+    dispatch({
+      type: `GET_PROFILE`,
+      payload: res.data
+    })
+  } catch (err) {
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
+
+//! GET GITHUB REPOS
+export const getGithubRepos = (username) => async dispatch => {
+  
+  try {
+    const res = await axios.get(`/api/profile/github/${username}`)
+    //PLURAL PROFILES
+    dispatch({
+      type: `GET_REPOS`,
+      payload: res.data
+    })
+  } catch (err) {
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
 //! CREATES OR UPDATES THE CURRENT PROFILE
 // This action takes in history so that we can redirect after editing or creating and set the false value to know when to redirect
 export const createProfile = (formData, history, edit = false) => async dispatch => {
@@ -236,6 +293,70 @@ export const addEducation = (formData, history) => async dispatch => {
       payload: {msg: err.response.statusText, status: err.response.status}
     })
   }
+}
+
+//!DELETE EXPERIENCE
+export const deleteExperience = (id) => async dispatch => {
+  try {
+    const res = await axios.delete(`/api/profile/experience/${id}`)
+
+    dispatch({
+      type: `UPDATE_PROFILE`,
+      payload: res.data
+    })
+
+    dispatch(setAlert('Experienced Removed', 'success'))
+  } catch (err) {
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
+
+//! DELETE EDUCATION
+
+export const deleteEducation = (id) => async dispatch => {
+  try {
+    const res = await axios.delete(`/api/profile/education/${id}`)
+
+    dispatch({
+      type: `UPDATE_PROFILE`,
+      payload: res.data
+    })
+
+    dispatch(setAlert('Education Removed', 'success'))
+  } catch (err) {
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
+
+//!DELETE FULL ACCOUNT!!!!
+
+export const deleteAccount = () => async dispatch => {
+  if(window.confirm('Are you sure? This cannot be undone!')){
+    try {
+      const res = await axios.delete(`/api/profile`)
+  
+      dispatch({
+        type: `CLEAR_PROFILE`,
+      })
+      dispatch({
+        type: `ACCOUNT_DELETED`
+      })
+  
+      dispatch(setAlert('Your account has been deleted :('))
+    } catch (err) {
+      dispatch({
+        type: `PROFILE_ERROR`,
+        payload: {msg: err.response.statusText, status: err.response.status}
+      })
+    }
+  }
+
 }
 
 

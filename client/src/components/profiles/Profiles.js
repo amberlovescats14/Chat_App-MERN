@@ -1,0 +1,37 @@
+import React, { Fragment, useEffect} from 'react'
+import Spinner from '../layout/Spinner'
+import ProfileItem from '../../components/profiles/ProfilesItems'
+import PropTypes from 'prop-types'
+
+const Profiles = props => {
+  const { profiles, loading, getProfiles } = props
+  useEffect(()=> {
+    getProfiles()
+  },[])
+  return (
+    <Fragment>
+      {loading ? <Spinner/> : 
+    <Fragment>
+      <h1 className="large text-primary">Developers</h1>
+      <p className="lead">
+      <i className="fab fa-connectdevelop"></i> Browse and connect with developers
+      </p>
+      <div className="profiles">
+      {profiles.length > 0 ? (
+        profiles.map(profile => (
+          <ProfileItem key={profile._id} profile={profile}/>
+        ))
+      ) : <h4>No Profiles Found...</h4>}
+      </div>
+      </Fragment>}
+    </Fragment>
+  )
+}
+
+Profiles.propTypes = {
+  profiles: PropTypes.object.isRequired,
+  getProfiles: PropTypes.func.isRequired,
+  
+}
+
+export default Profiles
