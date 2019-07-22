@@ -2,10 +2,11 @@ import React, { Fragment, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Spinner from '../layout/Spinner'
 import DashboardFunction from './DashboardFunction'
+import ExperienceDashboard from '../../containers/ExperienceDashboardContainer'
+import EducationDashboard from '../../containers/EducationDashboardContainer'
 import PropTypes from 'prop-types'
 
 const Dashboard = (props) => {
-  console.log(`DASHBOARD:`, props.profile)
   useEffect(()=> {
     props.getCurrentProfile()
   },[])
@@ -20,6 +21,8 @@ const Dashboard = (props) => {
       {props.profile !== null ?
       <Fragment>
         <DashboardFunction/>
+        <ExperienceDashboard />
+        <EducationDashboard/>
       </Fragment> :
       <Fragment>
         <p>You have not setup a profile, please add some info!</p>
