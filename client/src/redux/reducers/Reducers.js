@@ -68,11 +68,13 @@ export const getCurrentProfile = (state = profileState, action) => {
   const { type, payload } = action
   switch(type){
     case `GET_PROFILE`: 
+    case `UPDATE_PROFILE`:
     return {
       ...state,
       profile: payload,
       loading: false
     }
+
     case `PROFILE_ERROR`:
     return {
       ...state,
@@ -90,6 +92,7 @@ export const getCurrentProfile = (state = profileState, action) => {
     return state
   }
 }
+
 
 
 export default combineReducers({

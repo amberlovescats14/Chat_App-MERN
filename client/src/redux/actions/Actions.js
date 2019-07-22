@@ -149,7 +149,8 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     dispatch(setAlert(edit ? `Profile Updated!` : `Profile Created!`, 'success'))
 
     //Only if we are creating a new profile will we redirect. Not editing
-    if(!edit) {
+    //! This started out as if !edit but I had to change it to edit  because Im sending in true at the end
+    if(edit) {
       history.push('/dashboard')
     }
   } catch (err) {
@@ -166,6 +167,76 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     })
   }
 } 
+
+//!PROFILE ACTION
+//!Add experience
+export const addExperience = (formData, history) => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    //post request to api/profile
+    const res = await axios.put('/api/profile/experience', formData, config)
+    console.log(`RES`, res.data)
+    dispatch({
+      type: `UPDATE_PROFILE`,
+      payload: res.data
+    });
+    dispatch(setAlert('Experience Added.', 'success'))
+ 
+      history.push('/dashboard')
+    
+  } catch (err) {
+    //This will check if we forgot the fields & set errors
+    const errors = err.response.data.errors;
+    if(errors){
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+    }
+
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
+
+//!PROFILE ACTION
+//! add education
+export const addEducation = (formData, history) => async dispatch => {
+  try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    //post request to api/profile
+    const res = await axios.put('/api/profile/education', formData, config)
+    console.log(`RES`, res.data)
+    dispatch({
+      type: `UPDATE_PROFILE`,
+      payload: res.data
+    });
+    dispatch(setAlert('Education Added.', 'success'))
+ 
+      history.push('/dashboard')
+    
+  } catch (err) {
+    //This will check if we forgot the fields & set errors
+    const errors = err.response.data.errors;
+    if(errors){
+      errors.forEach(error => dispatch(setAlert(error.msg, 'danger')))
+    }
+
+    dispatch({
+      type: `PROFILE_ERROR`,
+      payload: {msg: err.response.statusText, status: err.response.status}
+    })
+  }
+}
 
 
 

@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 const CreateProfile = props => {
   //THIS COMPONENT is called CreateProfile and the action is called createProfile
@@ -43,7 +44,7 @@ const CreateProfile = props => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    props.createProfile(formData, props.history)
+    props.createProfile(formData, props.history, false)
   }
   return (
     <Fragment>
@@ -196,7 +197,7 @@ const CreateProfile = props => {
           </Fragment>}
         
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">Go Back</a>
+        <Link className="btn btn-light my-1" to="dashboard">Go Back</Link>
       </form>
       </section>
     </Fragment>
