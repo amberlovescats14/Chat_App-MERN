@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import Spinner from '../layout/Spinner'
 import PropTypes from 'prop-types'
 
@@ -8,9 +9,13 @@ const Profile = props => {
     getProfileById(match.params.id)
   },[getProfileById])
   return (
-    <div>
-      profile
-    </div>
+    <Fragment>
+      {profile === null || profile.loading ? <Spinner/> : 
+    <Fragment>
+      <Link to='/profiles' className="btn btn-light">
+      Back to Profiles</Link>
+      </Fragment> }
+    </Fragment>
   )
 }
 
