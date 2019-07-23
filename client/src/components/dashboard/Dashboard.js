@@ -5,12 +5,13 @@ import DashboardFunction from './DashboardFunction'
 import ExperienceDashboard from '../../containers/ExperienceDashboardContainer'
 import EducationDashboard from '../../containers/EducationDashboardContainer'
 import PropTypes from 'prop-types'
-import { deleteAccount } from '../../redux/actions/Actions';
+// import { deleteAccount } from '../../redux/actions/Actions';
 
 const Dashboard = (props) => {
+  const { getCurrentProfile } = props
   useEffect(()=> {
-    props.getCurrentProfile()
-  },[])
+    getCurrentProfile()
+  },[getCurrentProfile])
   return (
     props.auth.loading && props.profile === null ? <Spinner/> : <Fragment>
       <h1 className="large text-primary">Dashboard</h1>

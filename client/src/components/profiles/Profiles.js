@@ -7,7 +7,7 @@ const Profiles = props => {
   const { profiles, loading, getProfiles } = props
   useEffect(()=> {
     getProfiles()
-  },[])
+  },[getProfiles])
   return (
     <Fragment>
       {loading ? <Spinner/> : 

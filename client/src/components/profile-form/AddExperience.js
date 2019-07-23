@@ -72,7 +72,7 @@ const AddExperience = props => {
                     onChange={e => onChange(e)}/>
         </div>
          <div className="form-group">
-          <p><input type="checkbox" name="current" value="" 
+          <p><input type="checkbox" name="current"
                     checked={current}
                     value={current}
                     onChange={e => {

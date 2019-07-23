@@ -15,6 +15,19 @@ const ProfilesItems = props => {
         <p>{status} 
         {company && <span> at {company}</span>}
         </p>
+        <p className="my-1">
+        {location && <span>{location}</span>}</p>
+        <Link to={`/profile/${_id}`} className="btn btn-primary">
+        View Profile</Link>
+        <ul>
+          {skills.slice(0,4).map((skill, i)=> {
+           return (
+              <li key={i} className="text-primary" >
+              <i className="fas fa-check"></i>
+              {' '}{skill}</li>
+            )
+          })}
+        </ul>
       </div>
     </div>
   )
