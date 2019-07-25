@@ -5,7 +5,7 @@ import { getProfileById } from '../../redux/actions/Actions'
 
 const mapStateToProps = state => ({
   profile: state.getCurrentProfile.profile,
-  auth: state.register
+  auth: state.register,
 })
 
 const mapDispatchToProps = dispatch => ({
