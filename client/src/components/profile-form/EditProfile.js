@@ -81,8 +81,8 @@ const EditProfile = (props) => {
         <Link to='/'><i className="fas fa-code"></i> DevConnector</Link>
       </h1>
       <ul>
-        <li><a href="profiles.html">Developers</a></li>
-        <li><a href="posts.html">Posts</a></li>
+        <li><Link to='/developers'>Developers</Link></li>
+        <li><Link to='/posts'>Posts</Link></li>
         <li>
           |
           <Link to='/dashboard' title="Dashboard"

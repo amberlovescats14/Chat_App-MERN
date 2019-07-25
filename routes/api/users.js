@@ -42,10 +42,10 @@ router.post(
 
 
       const avatar = gravatar.url(email, {
-        s: '200',
+        s: '100',
         r: 'pg',
-        d: 'mp'
-      });
+        d: 'robohash'
+      }, true);
 
       user = new User({
         name,

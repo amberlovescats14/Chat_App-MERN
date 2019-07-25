@@ -50,11 +50,11 @@ const CreateProfile = props => {
     <Fragment>
        <nav className="navbar bg-dark">
       <h1>
-        <a href="index.html"><i className="fas fa-code"></i> DevConnector</a>
+        <Link to='/'><i className="fas fa-code"></i> DevConnector</Link>
       </h1>
       <ul>
-        <li><a href="profiles.html">Developers</a></li>
-        <li><a href="posts.html">Posts</a></li>
+        <li><Link to='/profiles'>Developers</Link></li>
+        <li><Link to='/posts'>Posts</Link></li>
         <li>
           |
           <Link to='/dashboard' title="Dashboard"
@@ -63,9 +63,9 @@ const CreateProfile = props => {
           >
         </li>
         <li>
-          <a href="login.html" title="Logout">
+          <Link to='/login' title="Logout">
             <i className="fas fa-sign-out-alt"></i>
-            <span className="hide-sm">Logout</span></a
+            <span className="hide-sm">Logout</span></Link
           >
         </li>
       </ul>

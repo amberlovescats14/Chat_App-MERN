@@ -107,11 +107,40 @@ export const getCurrentProfile = (state = profileState, action) => {
 }
 
 
+//! This is for post
+const postInitialState = {
+  posts: [],
+  post: null,
+  loading: true,
+  error: {}
+}
+
+export const getPosts = (state= postInitialState, action) => {
+  const { type, payload } = action
+  switch(type){
+    case `GET_POSTS`: 
+    return {
+      ...state,
+      posts: payload,
+      loading: false
+    }
+    case `POST_ERROR`:
+    return {
+      error: payload,
+      loading: false
+    }
+    default: return state
+  }
+}
+
+
+
 
 export default combineReducers({
   alert: setAlert,
   register: authFunc,
-  getCurrentProfile
+  getCurrentProfile,
+  getPosts
 })
 
 
