@@ -46,7 +46,7 @@ const AddEducation = props => {
       <form className="form"
       onSubmit={e => {
         e.preventDefault()
-        addEducation(formData, history)
+        addEducation(formData, history, true)
       }}>
         <div className="form-group">
           <input type="text" placeholder="*School or Bootcamp" name="school" 

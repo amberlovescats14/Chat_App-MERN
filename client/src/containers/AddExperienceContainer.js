@@ -4,7 +4,7 @@ import { addExperience } from '../redux/actions/Actions'
 import { withRouter } from 'react-router-dom'
 
 const mapDispatchToProps = (dispatch) => ({
-  addExperience: (formData, history) => dispatch(addExperience(formData, history))
+  addExperience: (formData, history, edit) => dispatch(addExperience(formData, history, edit))
 })
 
 export default connect(null, mapDispatchToProps)(withRouter(AddExperience))

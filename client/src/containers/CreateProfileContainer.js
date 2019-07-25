@@ -8,7 +8,7 @@ import { createProfile } from '../redux/actions/Actions'
 // })
 
 const mapDispatchToProps = (dispatch) => ({
-createProfile: (formData, history) => dispatch(createProfile(formData, history))
+createProfile: (formData, history, edit) => dispatch(createProfile(formData, history,edit))
 
 })
 

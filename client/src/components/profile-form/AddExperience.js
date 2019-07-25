@@ -47,7 +47,7 @@ const AddExperience = props => {
       <form className="form"
       onSubmit={e => {
         e.preventDefault()
-        addExperience(formData, history)
+        addExperience(formData, history, true)
       }}>
         <div className="form-group">
           <input type="text" placeholder="* Job Title" name="title" 

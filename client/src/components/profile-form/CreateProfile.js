@@ -44,7 +44,7 @@ const CreateProfile = props => {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    props.createProfile(formData, props.history, false)
+    props.createProfile(formData, props.history, true)
   }
   return (
     <Fragment>
