@@ -20,9 +20,13 @@ const Posts = props => {
       </p>
       {/* PostForm */}
       <div className="posts">
-        {posts.map(p => (
-          <PostItem key={p._id} post={p} />
-        ))}
+        {posts.map(p => {
+          console.log(`PPPP: `, p)
+          return (
+            <PostItem key={p._id} post={p} />
+          )
+        }
+        )}
       </div>
     </Fragment>
 

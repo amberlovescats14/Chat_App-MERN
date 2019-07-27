@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 
 const PostItem = props => {
-  const { auth } = props
+  const { auth, loading, addLike, removeLike } = props
   const { _id, name, avatar, user, likes, comments, date, text} = props.post
-  console.log(props.post)
   return (
     <Fragment>
          
@@ -28,22 +27,30 @@ const PostItem = props => {
              <p className="post-date">
                 Posted on <Moment format="MM/DD/YYY">{date}</Moment>
             </p>
-            <button type="button" className="btn btn-light">
-              <i className="fas fa-thumbs-up"></i>
-              <span>4</span>
+            <button type="button" className="btn btn-light"
+            onClick={e => addLike(_id)}>
+              <i className="fas fa-thumbs-up"></i> {' '}
+              {likes.length > 0 && (
+                <span>{likes.length}</span>
+              )}
             </button>
-            <button type="button" className="btn btn-light">
+            <button type="button" className="btn btn-light"
+            onClick={()=> removeLike(_id)}>
               <i className="fas fa-thumbs-down"></i>
             </button>
-            <a href="post.html" className="btn btn-primary">
-              Discussion <span className='comment-count'>2</span>
-            </a>
+            <Link to={`/post/${_id}`} className="btn btn-primary">
+              Discussion 
+              {comments.length > 0 && (
+                <span className='comment-count'> {comments.length}</span>
+                )}
+            </Link>
+            {!loading && user === auth.id && (
             <button      
             type="button"
-            className="btn btn-danger"
-          >
+            className="btn btn-danger">
             <i className="fas fa-times"></i>
           </button>
+            )}
           </div>
         </div>
     </Fragment>

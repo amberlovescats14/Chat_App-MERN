@@ -129,6 +129,14 @@ export const getPosts = (state= postInitialState, action) => {
       error: payload,
       loading: false
     }
+    case `UPDATE_LIKES`:
+      return {
+        ...state,
+        posts: state.getPosts.posts.map(post =>
+          post._id === payload.id ? { ...post, likes: payload.likes } : post
+        ),
+        loading: false
+      };
     default: return state
   }
 }
