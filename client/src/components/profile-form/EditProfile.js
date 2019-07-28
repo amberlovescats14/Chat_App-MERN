@@ -57,7 +57,7 @@ const EditProfile = (props) => {
       youtube: profile.loading || !profile.social ? '' : profile.social.youtube,
       instagram: profile.loading || !profile.social ? '' : profile.social.instagram
     });
-  }, [profile.loading, getCurrentProfile]);
+  }, [profile.loading, getCurrentProfile, profile]);
 
 
 

@@ -30,7 +30,7 @@ console.log(`REGISTER`, props.isAuthenticated)
   }
 
   return (
-    <Fragment>
+    <div className="container mx-4">
       {console.log(props)}
     <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
@@ -79,7 +79,7 @@ console.log(`REGISTER`, props.isAuthenticated)
         Already have an account?   
           <Link to='/login'>Sign In!</Link>
       </p>    
-      </Fragment>
+      </div>
   )
 }
 Register.propTypes = {

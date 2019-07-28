@@ -16,6 +16,7 @@ import Profiles from './containers/profiles/ProfilesContainer'
 import Profile from './containers/profile/ProfileContainer'
 import Posts from './containers/posts/PostsContainer'
 import Music from './components/music/Music'
+import Map from './containers/RunsContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import { loadUser } from './redux/actions/Actions'
@@ -35,10 +36,9 @@ const App = () => {
   // by giving this square brackets at the end it will only run once like a component did mount
   return (
   <BrowserRouter>
-  <Fragment >
+  <Fragment className="container-fluid" >
   <Navbar/>
   <Route exact path='/' component={Landing}/>
-  <section className="container">
   <Alert />
     <Switch>
       <Route exact path='/register' component={RegisterContainer}/>
@@ -52,8 +52,8 @@ const App = () => {
       <PrivateRoute exact path='/add-education' component={AddEducation}/>
       <PrivateRoute exact path='/posts' component={Posts}/>
       <PrivateRoute exact path='/music' component={Music}/>
+      <PrivateRoute exact path='/map' component={Map}/>
     </Switch>
-  </section>
   </Fragment>
   </BrowserRouter>
   )

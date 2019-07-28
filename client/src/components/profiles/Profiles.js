@@ -9,7 +9,7 @@ const Profiles = props => {
     getProfiles()
   },[getProfiles])
   return (
-    <Fragment>
+    <div className="container mx-4">
       {loading ? <Spinner/> : 
     <Fragment>
       <h1 className="large text-primary">Developers</h1>
@@ -24,7 +24,7 @@ const Profiles = props => {
       ) : <h4>No Profiles Found...</h4>}
       </div>
       </Fragment>}
-    </Fragment>
+    </div>
   )
 }
 

@@ -6,6 +6,7 @@ import Moment from 'react-moment'
 const PostItem = props => {
   const { auth, loading, addLike, removeLike } = props
   const { _id, name, avatar, user, likes, comments, date, text} = props.eachPost
+  console.log(`PROPS: `, props)
   return (
     <Fragment>
          

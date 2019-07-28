@@ -1,5 +1,6 @@
 import React, { Component} from 'react'
 import YTSearch from 'youtube-api-search'
+import './scss/music.css'
 import _ from 'lodash';
 import SearchBar from './components/SearchBar'
 import VideoDetail from './components/VideoDetail'
@@ -12,7 +13,6 @@ const API_KEY = process.env.REACT_APP_API_KEY
 export default class Music extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       videos: [],
       selectedVideo: null
@@ -36,15 +36,16 @@ export default class Music extends Component {
   render() {
     const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
     return (
-      <div style={{display: 'flex', flexDirection: 'column'}}>
+      <div style={{display: 'flex', flexDirection: 'column', marginTop:'100px'}}
+      className="container-fluid">
 
-      <h2>My Music App</h2>
+      <h1 id="gif">YouTube by Google</h1>
         <div>
         <div
         style={{display: 'flex', justifyContent: 'space-between',background: 'red'}}>
         <h1
         style={{color: '#efefef', alignSelf: 'center', flexBasis: '4', paddingTop:'20px', padingLeft: '30px' }}>
-        YTSearch   <i class="fab fa-searchengin"></i></h1>
+        YTSearch   <i className="fab fa-searchengin"></i></h1>
 
 
          <SearchBar onSearchTermChange={videoSearch} />

@@ -12,7 +12,8 @@ const Landing = ({isAuthenticated}) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">Run With Confidence!</h1>
+          <h1 className="x-large text-white"
+          style={{color:'white'}}>Run With Confidence!</h1>
           <p className="lead">
             Focus On Your Goal, Dont Look In Any Direction But Ahead.
           </p>

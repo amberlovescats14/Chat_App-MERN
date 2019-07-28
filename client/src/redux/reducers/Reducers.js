@@ -140,7 +140,20 @@ export const getPosts = (state= postInitialState, action) => {
     default: return state
   }
 }
-
+//! EVENTBRITE
+export const getRuns = (state=[], action) => {
+  switch(action.type){
+    case "SET_RUNS":
+    return state.concat(action.value);
+    default: 
+    return state
+  }
+}
+const location = (state=[], action) => {
+  switch(action.type){
+    default: return state
+  }
+}
 
 
 
@@ -148,7 +161,9 @@ export default combineReducers({
   alert: setAlert,
   register: authFunc,
   getCurrentProfile,
-  getPosts
+  getPosts,
+  runDATA: getRuns,
+  location
 })
 
 

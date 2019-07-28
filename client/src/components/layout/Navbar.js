@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import NavbarTwo from './NavbarTwo';
 
 const Navbar = (props) => {
   const authLinks = (
     <div>
     <ul>
+    <li>
+      <Link to='/map'>5K</Link>
+    </li>
     <li>
       <Link to='/music'>Music</Link>
     </li>
@@ -37,7 +39,7 @@ const Navbar = (props) => {
 
 
   const guestLinks = (
-    <ul>
+    <ul className="navbar-collapse">
         <li>
       <Link to='/profiles'>Developers</Link>
     </li>
@@ -61,7 +63,7 @@ const Navbar = (props) => {
   )
 console.log(`IN THE NAV`, props.auth)
   return (
-    <nav className="navbar bg-dark">
+    <nav className="navbar bg-dark " >
       <h1>
         <Link to='/'><i className="fas fa-code"></i> Amber Jones</Link>
       </h1>

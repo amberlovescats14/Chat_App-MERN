@@ -13,7 +13,7 @@ const Dashboard = (props) => {
     getCurrentProfile()
   },[getCurrentProfile])
   return (
-    props.auth.loading && props.profile === null ? <Spinner/> : <Fragment>
+    props.auth.loading && props.profile === null ? <Spinner/> : <div className="container mx-4">
       <h1 className="large text-primary">Dashboard</h1>
       {/* //This will be here weather the person has a profile or not */}
       <p className="lead">
@@ -38,7 +38,7 @@ const Dashboard = (props) => {
         <Link to='/create-profile' className="btn btn-primary my-1">
         Create Profile</Link>
       </Fragment>}
-    </Fragment>
+    </div>
   )
 }
 

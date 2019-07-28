@@ -3,7 +3,7 @@ import Moment from 'react-moment'
 import PropTypes from 'prop-types'
 
 const ProfileEducation = props => {
-  const { school, degree, fieldofstudy , current, to, from, description} = props
+  const { school, degree, fieldofstudy , to, from, description} = props
   return (
     <div>
       <h3 className="text-dark">{school}</h3>

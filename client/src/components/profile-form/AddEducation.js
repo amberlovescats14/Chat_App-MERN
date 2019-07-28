@@ -35,7 +35,7 @@ const AddEducation = props => {
   }
 
   return (
-    <Fragment>
+    <div className="container mx-4 my-6">
       <h1 className="large text-primary">
        Add Your Education
       </h1>
@@ -100,7 +100,7 @@ const AddEducation = props => {
         <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
       </form>
 
-    </Fragment>
+    </div>
   )
 }
 

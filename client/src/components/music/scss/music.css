@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900&display=swap");
+#gif {
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+  font-size: 7vh;
+  font-weight: 900;
+  background: url("https://i.pinimg.com/originals/07/f7/27/07f72772fee4f51adcf8f9aa9fa1a8e0.gif");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*# sourceMappingURL=music.css.map */

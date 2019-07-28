@@ -1,9 +1,8 @@
 import React from 'react'
 import Moment from 'react-moment'
-import PrivateRoute from '../routing/PrivateRoute';
 
 const ProfileExperience = props => {
-  const { company, title, location, current, to, from, description} = props
+  const { company, title, to, from, description} = props
   return (
     <div>
       <h3 className="text-dark">{company}</h3>

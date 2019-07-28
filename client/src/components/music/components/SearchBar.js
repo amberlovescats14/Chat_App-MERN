@@ -25,7 +25,7 @@ export default class SearchBar extends Component {
       />
      
     
-      <Button style={{ "marginLeft":"5px" }} className="bg-dark"><i class="fab fa-searchengin"></i></Button>
+      <Button style={{ "marginLeft":"5px" }} className="bg-dark"><i className="fab fa-searchengin"></i></Button>
   </div>
     )
   }
