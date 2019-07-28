@@ -3,18 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.20.7",
     "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^8.0.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.10",
     "react-dom": "^16.8.6",
     "react-moment": "^0.9.2",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-youtube": "^7.9.0",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "youtube-api-search": "0.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,5 +43,9 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "css-loader": "^3.1.0",
+    "style-loader": "^0.23.1"
+  }
 }

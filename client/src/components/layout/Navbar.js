@@ -1,10 +1,15 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import NavbarTwo from './NavbarTwo';
 
 const Navbar = (props) => {
   const authLinks = (
+    <div>
     <ul>
+    <li>
+      <Link to='/music'>Music</Link>
+    </li>
       <li>
       <Link to='/profiles'>Developers</Link>
     </li>
@@ -26,6 +31,7 @@ const Navbar = (props) => {
     </li>
 
     </ul>
+    </div>
   )
 
 

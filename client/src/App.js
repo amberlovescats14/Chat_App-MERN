@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import 'antd/dist/antd.css';
 import { BrowserRouter , Route, Switch } from 'react-router-dom'
 import store from './store'
 import Navbar from './containers/NavBarContainer'
@@ -6,6 +7,7 @@ import Landing from './containers/LandingContainer'
 import RegisterContainer from './containers/RegisterContainer'
 import Login from './containers/LoginContainer'
 import Dashboard from './containers/DashboardContainer'
+import settingAuthToken from './util/setAuthToken'
 import CreateProfile from './containers/CreateProfileContainer'
 import EditProfile from './containers/EditProfileContainer'
 import AddExperience from './containers/AddExperienceContainer'
@@ -13,9 +15,9 @@ import AddEducation from './containers/AddEducationContainer'
 import Profiles from './containers/profiles/ProfilesContainer'
 import Profile from './containers/profile/ProfileContainer'
 import Posts from './containers/posts/PostsContainer'
+import Music from './components/music/Music'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
-import settingAuthToken from './util/setAuthToken'
 import { loadUser } from './redux/actions/Actions'
 import './App.css';
 
@@ -49,6 +51,7 @@ const App = () => {
       <PrivateRoute exact path='/add-experience' component={AddExperience}/>
       <PrivateRoute exact path='/add-education' component={AddEducation}/>
       <PrivateRoute exact path='/posts' component={Posts}/>
+      <PrivateRoute exact path='/music' component={Music}/>
     </Switch>
   </section>
   </Fragment>

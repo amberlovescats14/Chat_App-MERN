@@ -5,7 +5,7 @@ import Moment from 'react-moment'
 
 const PostItem = props => {
   const { auth, loading, addLike, removeLike } = props
-  const { _id, name, avatar, user, likes, comments, date, text} = props.post
+  const { _id, name, avatar, user, likes, comments, date, text} = props.eachPost
   return (
     <Fragment>
          
@@ -28,14 +28,14 @@ const PostItem = props => {
                 Posted on <Moment format="MM/DD/YYY">{date}</Moment>
             </p>
             <button type="button" className="btn btn-light"
-            onClick={e => addLike(_id)}>
+            onClick={(_id )=> addLike(_id)}>
               <i className="fas fa-thumbs-up"></i> {' '}
               {likes.length > 0 && (
                 <span>{likes.length}</span>
               )}
             </button>
             <button type="button" className="btn btn-light"
-            onClick={()=> removeLike(_id)}>
+            onClick={(_id)=> removeLike(_id)}>
               <i className="fas fa-thumbs-down"></i>
             </button>
             <Link to={`/post/${_id}`} className="btn btn-primary">
@@ -58,7 +58,7 @@ const PostItem = props => {
 }
 
 PostItem.propTypes = {
-  post: PropTypes.object.isRequired,
+  eachPost: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
 }
 

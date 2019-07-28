@@ -4,8 +4,8 @@ import PostItem from '../../containers/posts/PostItemContainer'
 import PropTypes from 'prop-types'
 
 const Posts = props => {
-  const { getPosts } = props
-  const { posts, loading } = props.gotPosts
+  const { getPosts, posts, loading } = props
+
   console.log(`POSTS: `, props)
   useEffect(()=> {
     getPosts()
@@ -18,12 +18,11 @@ const Posts = props => {
       <p className="lead">
       <i className="fas fa-user"></i> Welcome to the community!
       </p>
-      {/* PostForm */}
       <div className="posts">
         {posts.map(p => {
-          console.log(`PPPP: `, p)
+          console.log(`POSTS IN POST: `, p)
           return (
-            <PostItem key={p._id} post={p} />
+            <PostItem key={p._id}  eachPost={p}/>
           )
         }
         )}
@@ -35,7 +34,7 @@ const Posts = props => {
 
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
-  gotPosts: PropTypes.object.isRequired
+  posts: PropTypes.array.isRequired
 }
 
 export default Posts

@@ -5,7 +5,9 @@ import { addLike, removeLike } from '../../redux/actions/Actions'
 
 const mapStateToProps = state => ({
   auth: state.register.user,
-  loading: state.register.loading
+  loading: state.getPosts.loading,
+  
+
 })
 
 const mapDispatchToProps = dispatch => ({

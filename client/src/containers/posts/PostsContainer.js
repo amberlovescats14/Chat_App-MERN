@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { getPosts } from '../../redux/actions/Actions'
 
 const mapStateToProps = state => ({
-  gotPosts : state.getPosts
+ posts : state.getPosts.posts,
+ loading: state.getPosts.loading
  
 })
 
