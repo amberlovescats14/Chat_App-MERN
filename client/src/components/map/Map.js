@@ -3,6 +3,7 @@ import './Map.css'
 import { Media, Card} from 'react-bootstrap'
 import moment from 'moment'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
+import Calendar from 'react-calendar';
 const google = window.google = window.google ? window.google : {}
 
 export class Runs extends Component {
@@ -12,6 +13,8 @@ export class Runs extends Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
+      dateNow: new Date(),
+      dateJuly: "07/08/2019"
     }
   }
   componentDidMount = () => {
@@ -118,6 +121,18 @@ export class Runs extends Component {
       </Map>
       </div>
       </div>
+      <div id="bottom-container">
+      <div id="calendar">
+
+        <Calendar id="thecalendar"
+          onChange={this.onChange}
+          value={this.state.dateNow}
+          weekNumbers={true}
+
+        />
+      </div>
+
+      </div>
       </div>
     )
   }
@@ -128,18 +143,7 @@ const mapStyle = {
   boxShadow:'0 0 10px #da363b'
 
 }
-const heatMapData = {
  
-    positions: [{
-      lat: 29.424122,
-      lng: -98.493629
-    }],
-    options : {
-      radius: 20,
-      opactiy: .6
-    }
-  
-}  
 
 // export default Runs
 export default GoogleApiWrapper({
