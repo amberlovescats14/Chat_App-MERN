@@ -32,7 +32,7 @@ export const authFunc = ({name, email, password}) => async dispatch => {
     }
     const body = JSON.stringify({name, email, password})
     try {
-      const res = await axios.post('/api/users', body, config)
+      const res = await axios.post('https://obscure-plateau-12826.herokuapp.com/api/users', body, config)
 
       dispatch({
         type: `REGISTER_SUCCESS`,
@@ -58,7 +58,7 @@ export const loadUser = () => async dispatch => {
     settingAuthToken(localStorage.token)
   }
   try {
-    const res = await axios.get('/api/auth')
+    const res = await axios.get('https://obscure-plateau-12826.herokuapp.com/api/auth')
 
     dispatch({
       type: `USER_LOADED`,
@@ -80,7 +80,7 @@ export const loginFunc = (email, password) => async dispatch => {
   }
   const body = JSON.stringify({email, password})
   try {
-    const res = await axios.post('/api/auth', body, config)
+    const res = await axios.post('https://obscure-plateau-12826.herokuapp.com/api/auth', body, config)
 
     dispatch({
       type: `LOGIN_SUCCESS`,
@@ -116,7 +116,7 @@ export const logout = () => dispatch => {
 //This will get the current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
-    const res = await axios.get('/api/profile/me')
+    const res = await axios.get('https://obscure-plateau-12826.herokuapp.com/api/profile/me')
     dispatch({
       type: `GET_PROFILE`,
       payload: res.data
@@ -138,7 +138,7 @@ export const getProfiles = () => async dispatch => {
   })
 
   try {
-    const res = await axios.get('/api/profile')
+    const res = await axios.get('https://obscure-plateau-12826.herokuapp.com/api/profile')
     //PLURAL PROFILES
     dispatch({
       type: `GET_PROFILES`,
@@ -155,7 +155,7 @@ export const getProfiles = () => async dispatch => {
 export const getProfileById = (userId) => async dispatch => {
   
   try {
-    const res = await axios.get(`/api/profile/user/${userId}`)
+    const res = await axios.get(`https://obscure-plateau-12826.herokuapp.com/api/profile/user/${userId}`)
     //PLURAL PROFILES
     dispatch({
       type: `GET_PROFILE`,
@@ -173,7 +173,7 @@ export const getProfileById = (userId) => async dispatch => {
 export const getGithubRepos = (username) => async dispatch => {
   
   try {
-    const res = await axios.get(`/api/profile/github/${username}`)
+    const res = await axios.get(`https://obscure-plateau-12826.herokuapp.com/api/profile/github/${username}`)
     //PLURAL PROFILES
     dispatch({
       type: `GET_REPOS`,
@@ -197,7 +197,7 @@ export const createProfile = (formData, history, edit = false) => async dispatch
     }
 
     //post request to api/profile
-    const res = await axios.post('/api/profile', formData, config)
+    const res = await axios.post('https://obscure-plateau-12826.herokuapp.com/api/profile', formData, config)
     console.log(`RES`, res.data)
     dispatch({
       type: `GET_PROFILE`,
@@ -236,7 +236,7 @@ export const addExperience = (formData, history) => async dispatch => {
     }
 
     //post request to api/profile
-    const res = await axios.put('/api/profile/experience', formData, config)
+    const res = await axios.put('https://obscure-plateau-12826.herokuapp.com/api/profile/experience', formData, config)
     console.log(`RES`, res.data)
     dispatch({
       type: `UPDATE_PROFILE`,
@@ -271,7 +271,7 @@ export const addEducation = (formData, history) => async dispatch => {
     }
 
     //post request to api/profile
-    const res = await axios.put('/api/profile/education', formData, config)
+    const res = await axios.put('https://obscure-plateau-12826.herokuapp.com/api/profile/education', formData, config)
     console.log(`RES`, res.data)
     dispatch({
       type: `UPDATE_PROFILE`,
@@ -298,7 +298,7 @@ export const addEducation = (formData, history) => async dispatch => {
 //!DELETE EXPERIENCE
 export const deleteExperience = (id) => async dispatch => {
   try {
-    const res = await axios.delete(`/api/profile/experience/${id}`)
+    const res = await axios.delete(`https://obscure-plateau-12826.herokuapp.com/api/profile/experience/${id}`)
 
     dispatch({
       type: `UPDATE_PROFILE`,
@@ -318,7 +318,7 @@ export const deleteExperience = (id) => async dispatch => {
 
 export const deleteEducation = (id) => async dispatch => {
   try {
-    const res = await axios.delete(`/api/profile/education/${id}`)
+    const res = await axios.delete(`https://obscure-plateau-12826.herokuapp.com/api/profile/education/${id}`)
 
     dispatch({
       type: `UPDATE_PROFILE`,
@@ -339,7 +339,7 @@ export const deleteEducation = (id) => async dispatch => {
 export const deleteAccount = () => async dispatch => {
   if(window.confirm('Are you sure? This cannot be undone!')){
     try {
-      await axios.delete(`/api/profile`)
+      await axios.delete(`https://obscure-plateau-12826.herokuapp.com/api/profile`)
   
       dispatch({
         type: `CLEAR_PROFILE`,
@@ -362,7 +362,7 @@ export const deleteAccount = () => async dispatch => {
 //! getting posts
 export const getPosts = () => async dispatch => {
   try {
-    const res = await axios.get('/api/posts')
+    const res = await axios.get('https://obscure-plateau-12826.herokuapp.com/api/posts')
 
     dispatch({
       type: `GET_POSTS`,
@@ -380,7 +380,7 @@ export const getPosts = () => async dispatch => {
 
 export const addLike = id => async dispatch => {
   try {
-    const res = await axios.put(`/api/posts/like/${id}`);
+    const res = await axios.put(`https://obscure-plateau-12826.herokuapp.com/api/posts/like/${id}`);
     dispatch({
       type: `UPDATE_LIKES`,
       payload: { id, likes: res.data }
@@ -398,7 +398,7 @@ export const addLike = id => async dispatch => {
 export const removeLike = (id) => async dispatch => {
   
   try {
-    const res = await axios.put(`api/posts/unlike/${id}`)
+    const res = await axios.put(`https://obscure-plateau-12826.herokuapp.com/api/posts/unlike/${id}`)
     dispatch({
       type: `UPDATE_LIKES`,
       payload: {
