@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 const Posts = props => {
   const { getPosts, posts, loading } = props
 
-  console.log(`POSTS: `, props)
+  console.log(`POSTS!!!!!!!!!: `, props.posts)
   useEffect(()=> {
     getPosts()
 

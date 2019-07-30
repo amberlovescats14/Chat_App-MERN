@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect } from 'react';
-import 'antd/dist/antd.css';
 import { BrowserRouter , Route, Switch } from 'react-router-dom'
 import store from './store'
 import Navbar from './containers/NavBarContainer'
