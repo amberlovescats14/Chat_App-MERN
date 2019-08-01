@@ -54,7 +54,9 @@ export class Runs extends Component {
             <img src="https://lh4.googleusercontent.com/proxy/gdKMsKqzMFQ1xEVJf9lNNfL7pw_HG3DaHZij1yJPHGPLQYzY_FXqVrSsC0Q2VK49HPML25NGCls545UIGYmTs6y11TAXtLcKAv_HmKA=w3840-h2160-p-k-no-nd-mv" alt="space" className="space"/>
 
       <div id="header-container">
-        <h1 style={{color: '#efefef'}}>5K Races in San Antonio</h1>
+        <h1 
+        style={{color: '#efefef'}}>
+        5K Races in San Antonio</h1>
         <img src="https://avatars3.githubusercontent.com/u/369874?s=280&v=4" alt="e" className="e"/>
         <h3 style={{color: '#efefef'}}>Powered by EventBrite</h3>
       </div>

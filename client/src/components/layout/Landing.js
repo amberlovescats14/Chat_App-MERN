@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import './landing.css'
+import './landing-scss/landing.css'
 import PropTypes from 'prop-types';
 
 const Landing = ({isAuthenticated}) => {
