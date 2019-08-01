@@ -44,7 +44,7 @@ const CreateProfile = props => {
   }
   return (
     <Fragment>
-       <nav className="navbar bg-dark">
+       {/* <nav className="navbar bg-dark">
       <h1>
         <Link to='/'><i className="fas fa-code"></i> DevConnector</Link>
       </h1>
@@ -65,7 +65,7 @@ const CreateProfile = props => {
           >
         </li>
       </ul>
-    </nav>
+    </nav> */}
     <section className="container">
       <h1 className="large text-primary">
         Create Your Profile
@@ -79,14 +79,11 @@ const CreateProfile = props => {
       onSubmit={e => onSubmit(e)}>
         <div className="form-group">
         <select name='status' value={status} onChange={e => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+            <option value="0">* Select Status</option>
+            <option value="Professional Runner">Professional</option>
+            <option value="Advanced Runner">Advanced</option>
+            <option value="Intermediate Runner">Intermediate</option>
+            <option value="Beginner Runner">Beginner</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text"
@@ -94,11 +91,11 @@ const CreateProfile = props => {
           >
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Company" name="company" 
+          <input type="text" placeholder="Team" name="company" 
           value={company} 
           onChange={e => onChange(e)}/>
           <small className="form-text"
-            >Could be your own company or one you work for</small
+            >If you are apart of a team</small
           >
         </div>
         <div className="form-group">
@@ -106,7 +103,7 @@ const CreateProfile = props => {
           value={website}
           onChange={e => onChange(e)}/>
           <small className="form-text"
-            >Could be your own or a company website</small
+            >Could be your own personal website</small
           >
         </div>
         <div className="form-group">
@@ -114,7 +111,7 @@ const CreateProfile = props => {
                     value={location}
                     onChange={e => onChange(e)}/>
           <small className="form-text"
-            >City & state suggested (eg. Boston, MA)</small
+            >City & state suggested (eg. San Antonio, TX)</small
           >
         </div>
         <div className="form-group">
@@ -122,8 +119,7 @@ const CreateProfile = props => {
                     value={skills}
                     onChange={e => onChange(e)}/>
           <small className="form-text"
-            >Please use comma separated values (eg.
-            HTML,CSS,JavaScript,PHP)</small
+            >Please use comma separated values </small
           >
         </div>
  

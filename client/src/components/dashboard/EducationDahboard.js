@@ -24,12 +24,12 @@ const EducationDashboard = props => {
 
   return (
     <Fragment>
-      <h2 className="my-2">Education Credentials</h2>
+      <h2 className="my-2">Training Credentials</h2>
       <table className="table">
       <thead>
         <tr>
-          <th>School</th>
-          <th className="hide-sm">Degree</th>
+          <th>Team</th>
+          <th className="hide-sm">Location</th>
           <th className="hide-sm">Years</th>
           <th />
         </tr>

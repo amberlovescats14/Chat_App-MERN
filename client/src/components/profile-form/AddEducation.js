@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
@@ -37,10 +37,10 @@ const AddEducation = props => {
   return (
     <div className="container mx-4 my-6">
       <h1 className="large text-primary">
-       Add Your Education
+       Add A Team
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any school or bootcamp that you have attended!
+        <i className="fas fa-code-branch"></i> Tell us about your training experience
       </p>
       <small>* = required field</small>
       <form className="form"
@@ -49,18 +49,18 @@ const AddEducation = props => {
         addEducation(formData, history, true)
       }}>
         <div className="form-group">
-          <input type="text" placeholder="*School or Bootcamp" name="school" 
+          <input type="text" placeholder="*Team or Organization" name="school" 
           value={school}
           onChange={e => onChange(e)}
           required />
         </div>
         <div className="form-group">
-          <input type="text" placeholder="* Degree or Certificate" name="degree" 
+          <input type="text" placeholder="* Location" name="degree" 
                     value={degree}
                     onChange={e => onChange(e)} required />
         </div>
         <div className="form-group">
-          <input type="text" placeholder="Field Of Study" name="fieldofstudy"
+          <input type="text" placeholder="5k, 10k, Half or Full Marathon" name="fieldofstudy"
                     value={fieldofstudy}
                     onChange={e => onChange(e)} />
         </div>
@@ -91,7 +91,7 @@ const AddEducation = props => {
             name="description"
             cols="30"
             rows="5"
-            placeholder="Program Description"
+            placeholder="Description"
             value={description}
             onChange={e => onChange(e)}
           ></textarea>

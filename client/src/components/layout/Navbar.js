@@ -13,7 +13,7 @@ const Navbar = (props) => {
       <Link to='/music'>Music</Link>
     </li>
       <li>
-      <Link to='/profiles'>Developers</Link>
+      <Link to='/profiles'>Runners</Link>
     </li>
     <li>
       <Link to='/posts'>Posts</Link>

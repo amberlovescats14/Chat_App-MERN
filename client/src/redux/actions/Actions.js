@@ -3,7 +3,7 @@ import axios from 'axios'
 import settingAuthToken from '../../util/setAuthToken'
 
 
-export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
+export const setAlert = (msg, alertType, timeout = 2000) => dispatch => {
   const id = uuid.v4();
   dispatch({
     type: 'SET_ALERT',
@@ -277,7 +277,7 @@ export const addEducation = (formData, history) => async dispatch => {
       type: `UPDATE_PROFILE`,
       payload: res.data
     });
-    dispatch(setAlert('Education Added.', 'success'))
+    dispatch(setAlert('Team Added.', 'success'))
  
       history.push('/dashboard')
     
@@ -305,7 +305,7 @@ export const deleteExperience = (id) => async dispatch => {
       payload: res.data
     })
 
-    dispatch(setAlert('Experienced Removed', 'success'))
+    dispatch(setAlert('Experience Removed', 'success'))
   } catch (err) {
     dispatch({
       type: `PROFILE_ERROR`,
@@ -325,7 +325,7 @@ export const deleteEducation = (id) => async dispatch => {
       payload: res.data
     })
 
-    dispatch(setAlert('Education Removed', 'success'))
+    dispatch(setAlert('Team Removed', 'success'))
   } catch (err) {
     dispatch({
       type: `PROFILE_ERROR`,

@@ -104,10 +104,10 @@ const EditProfile = (props) => {
         <div className="form-group">
         <select name='status' value={status} onChange={e => onChange(e)}>
             <option value="0">* What Kind of Runner are you?</option>
-            <option value="Developer">Professional</option>
-            <option value="Junior Developer">Advanced</option>
-            <option value="Senior Developer">Intermediate</option>
-            <option value="Manager">Begginer</option>
+            <option value="Professional Runner">Professional</option>
+            <option value="Advanced Runner">Advanced</option>
+            <option value="Intermediate Runner">Intermediate</option>
+            <option value="Begginer Runner">Begginer</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text"

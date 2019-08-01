@@ -5,7 +5,6 @@ import ProfileTop from './ProfileTop'
 import ProfileAbout from './ProfileAbout'
 import ProfileExperience from './ProfileExperience'
 import ProfileEducation from './ProfileEducation'
-import ProfileGitHub from '../../containers/profile/ProfileGitHubContainer'
 import PropTypes from 'prop-types'
 
 const Profile = props => {
@@ -70,9 +69,6 @@ const Profile = props => {
           ):
           (<h4>No Experiene Credentials</h4>)}
           </div>
-          {profile.githubusername && (
-            <ProfileGitHub username={profile.githubusername} />
-          )}
           </div>
       </Fragment> }
     </Fragment>

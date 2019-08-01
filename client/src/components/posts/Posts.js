@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect} from 'react'
+import React, { useEffect} from 'react'
 import Spinner from '../layout/Spinner'
 import PostItem from '../../containers/posts/PostItemContainer'
 import PropTypes from 'prop-types'
