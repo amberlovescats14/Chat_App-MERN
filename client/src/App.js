@@ -18,6 +18,7 @@ import Music from './components/music/Music'
 import Map from './containers/RunsContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
+import Contact from './components/contact/Contact'
 import { loadUser } from './redux/actions/Actions'
 import './App.css';
 
@@ -44,6 +45,7 @@ const App = () => {
       <Route exact path='/login' component={Login}/>
       <Route exact path='/profiles' component={Profiles}/>
       <Route exact path='/profile/:id' component={Profile}/>
+      <Route exact path='/contact' component={Contact}/>
       <PrivateRoute exact path='/dashboard' component={Dashboard}/>
       <PrivateRoute exact path='/create-profile' component={CreateProfile}/>
       <PrivateRoute exact path='/edit-profile' component={EditProfile}/>

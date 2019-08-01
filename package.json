@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/amberlovescats14/dev_MERN#readme",
   "dependencies": {
+    "@material-ui/core": "^4.3.0",
     "bcryptjs": "^2.4.3",
     "config": "^3.2.0",
     "express": "^4.17.1",

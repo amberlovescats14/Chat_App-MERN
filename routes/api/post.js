@@ -106,7 +106,7 @@ router.put('/like/:id', auth, async(req, res) => {
     post.likes.unshift({user: req.user.id})
     await post.save()
 
-    res.json(post.likes)
+    return res.json(post.likes)
 
   } catch (error) {
     console.error(error.message)
@@ -141,7 +141,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
 
     await post.save();
 
-    res.json(post.likes);
+    return  res.json(post.likes);
   } catch (err) {
     console.error(err.message);
     res.status(500).json({msg: `SERVER ERROR`});
