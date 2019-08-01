@@ -5,24 +5,18 @@ import PropTypes from 'prop-types'
 const AddExperience = props => {
   const { addExperience, history } = props
   const [formData, setFormData] = useState({
-    company: '',
     title: '',
     location: '',
     from: '',
-    to: '',
-    current: false,
     description: ''
   })
 
   const [toDateDisabled, toggleDisabled] = useState(false)
 
   const { 
-    company,
     title,
     location,
     from,
-    to, 
-    current, 
     description} = formData
 
   const onChange = (e )=> {
@@ -40,8 +34,7 @@ const AddExperience = props => {
        Add An Experience
       </h1>
       <p className="lead">
-        <i className="fas fa-code-branch"></i> Add any developer/programming
-        positions that you have had in the past
+        <i className="fas fa-code-branch"></i> Tell us about any races that you have been participated in
       </p>
       <small>* = required field</small>
       <form className="form"
@@ -50,15 +43,10 @@ const AddExperience = props => {
         addExperience(formData, history, true)
       }}>
         <div className="form-group">
-          <input type="text" placeholder="* Job Title" name="title" 
+          <input type="text" placeholder="* Race" name="title" 
           value={title}
           onChange={e => onChange(e)}
           required />
-        </div>
-        <div className="form-group">
-          <input type="text" placeholder="* Company" name="company" 
-                    value={company}
-                    onChange={e => onChange(e)} required />
         </div>
         <div className="form-group">
           <input type="text" placeholder="Location" name="location"
@@ -66,25 +54,9 @@ const AddExperience = props => {
                     onChange={e => onChange(e)} />
         </div>
         <div className="form-group">
-          <h4>From Date</h4>
+          <h4>Date</h4>
           <input type="date" name="from" 
                     value={from}
-                    onChange={e => onChange(e)}/>
-        </div>
-         <div className="form-group">
-          <p><input type="checkbox" name="current"
-                    checked={current}
-                    value={current}
-                    onChange={e => {
-                      setFormData({...formData, current: !current })
-                      toggleDisabled(!toDateDisabled)
-                    }}/> {' '}Current Job</p>
-        </div>
-        <div className="form-group">
-          <h4>To Date</h4>
-          <input type="date" name="to" 
-          disabled={toDateDisabled ? 'disabled': ''}
-                    value={to}
                     onChange={e => onChange(e)}/>
         </div>
         <div className="form-group">
@@ -92,7 +64,7 @@ const AddExperience = props => {
             name="description"
             cols="30"
             rows="5"
-            placeholder="Job Description"
+            placeholder="Description"
             value={description}
             onChange={e => onChange(e)}
           ></textarea>

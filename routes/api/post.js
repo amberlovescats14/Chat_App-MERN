@@ -41,7 +41,7 @@ router.post(
       res.json(post);
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server Error');
+      res.status(500).json({msg: `SERVER ERROR`});
     }
   }
 );
@@ -56,7 +56,7 @@ router.get('/', auth, async(req, res) => {
     res.json(posts)
   } catch (error) {
     console.error(error.message)
-    res.status(404).json(`SERVER ERROR`)
+    res.status(404).json({msg: `SERVER ERROR`})
   }
 })
 
@@ -144,7 +144,7 @@ router.put('/unlike/:id', auth, async (req, res) => {
     res.json(post.likes);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({msg: `SERVER ERROR`});
   }
 });
 

@@ -10,11 +10,9 @@ const CreateProfile = props => {
     location: '',
     status: '',
     skills: '',
-    githubusername: '',
     bio: '',
     twitter: '',
     facebook: '',
-    linkedin: '',
     youtube: '',
     instagram: ''
   })
@@ -25,11 +23,9 @@ const CreateProfile = props => {
     location,
     status,
     skills,
-    githubusername,
     bio,
     twitter,
     facebook,
-    linkedin,
     youtube,
     instagram
   } = formData
@@ -130,19 +126,7 @@ const CreateProfile = props => {
             HTML,CSS,JavaScript,PHP)</small
           >
         </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={e => onChange(e)}
-          />
-          <small className="form-text"
-            >If you want your latest repos and a Github link, include your
-            username</small
-          >
-        </div>
+ 
         <div className="form-group">
           <textarea placeholder="A short bio of yourself" name="bio"
                     value={bio}
@@ -181,12 +165,6 @@ const CreateProfile = props => {
                     onChange={e => onChange(e)}/>
         </div>
 
-        <div className="form-group social-input">
-          <i className="fab fa-linkedin fa-2x"></i>
-          <input type="text" placeholder="Linkedin URL" name="linkedin" 
-                    value={linkedin}
-                    onChange={e => onChange(e)}/>
-        </div>
 
         <div className="form-group social-input">
           <i className="fab fa-instagram fa-2x"></i>

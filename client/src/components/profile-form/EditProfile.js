@@ -11,11 +11,9 @@ const EditProfile = (props) => {
     location: '',
     status: '',
     skills: '',
-    githubusername: '',
     bio: '',
     twitter: '',
     facebook: '',
-    linkedin: '',
     youtube: '',
     instagram: ''
   })
@@ -29,11 +27,9 @@ const EditProfile = (props) => {
         location,
         status,
         skills,
-        githubusername,
         bio,
         twitter,
         facebook,
-        linkedin,
         youtube,
         instagram
       } = formData
@@ -48,12 +44,9 @@ const EditProfile = (props) => {
       location: profile.loading || !profile.location ? '' : profile.location,
       status: profile.loading || !profile.status ? '' : profile.status,
       skills: profile.loading || !profile.skills ? '' : profile.skills.join(','),
-      githubusername:
-        profile.loading || !profile.githubusername ? '' : profile.githubusername,
       bio: profile.loading || !profile.bio ? '' : profile.bio,
       twitter: profile.loading || !profile.social ? '' : profile.social.twitter,
       facebook: profile.loading || !profile.social ? '' : profile.social.facebook,
-      linkedin: profile.loading || !profile.social ? '' : profile.social.linkedin,
       youtube: profile.loading || !profile.social ? '' : profile.social.youtube,
       instagram: profile.loading || !profile.social ? '' : profile.social.instagram
     });
@@ -76,7 +69,7 @@ const EditProfile = (props) => {
   console.log(`EDIT PROPS:`, props.profile.user)
   return (
     <Fragment>
-       <nav className="navbar bg-dark">
+       {/* <nav className="navbar bg-dark">
       <h1>
         <Link to='/'><i className="fas fa-code"></i> DevConnector</Link>
       </h1>
@@ -97,28 +90,24 @@ const EditProfile = (props) => {
           >
         </li>
       </ul>
-    </nav>
+    </nav> */}
     <section className="container">
       <h1 className="large text-primary">
-        Create Your Profile
+        Edit Your Profile
       </h1>
       <p className="lead">
-        <i className="fas fa-user"></i> Let's get some information to make your
-        profile stand out
+        <i className="fas fa-user"></i> Tell us about yourself!
       </p>
       <small>* = required field</small>
       <form className="form"
       onSubmit={e => onSubmit(e)}>
         <div className="form-group">
         <select name='status' value={status} onChange={e => onChange(e)}>
-            <option value="0">* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+            <option value="0">* What Kind of Runner are you?</option>
+            <option value="Developer">Professional</option>
+            <option value="Junior Developer">Advanced</option>
+            <option value="Senior Developer">Intermediate</option>
+            <option value="Manager">Begginer</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text"
@@ -130,7 +119,7 @@ const EditProfile = (props) => {
           value={company} 
           onChange={e => onChange(e)}/>
           <small className="form-text"
-            >Could be your own company or one you work for</small
+            >Are you apart of a team?</small
           >
         </div>
         <div className="form-group">
@@ -138,7 +127,7 @@ const EditProfile = (props) => {
           value={website}
           onChange={e => onChange(e)}/>
           <small className="form-text"
-            >Could be your own or a company website</small
+            >Personal Website</small
           >
         </div>
         <div className="form-group">
@@ -146,7 +135,7 @@ const EditProfile = (props) => {
                     value={location}
                     onChange={e => onChange(e)}/>
           <small className="form-text"
-            >City & state suggested (eg. Boston, MA)</small
+            >City & state suggested (eg. San Antonio, TX)</small
           >
         </div>
         <div className="form-group">
@@ -156,19 +145,6 @@ const EditProfile = (props) => {
           <small className="form-text"
             >Please use comma separated values (eg.
             HTML,CSS,JavaScript,PHP)</small
-          >
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={e => onChange(e)}
-          />
-          <small className="form-text"
-            >If you want your latest repos and a Github link, include your
-            username</small
           >
         </div>
         <div className="form-group">
@@ -209,12 +185,6 @@ const EditProfile = (props) => {
                     onChange={e => onChange(e)}/>
         </div>
 
-        <div className="form-group social-input">
-          <i className="fab fa-linkedin fa-2x"></i>
-          <input type="text" placeholder="Linkedin URL" name="linkedin" 
-                    value={linkedin}
-                    onChange={e => onChange(e)}/>
-        </div>
 
         <div className="form-group social-input">
           <i className="fab fa-instagram fa-2x"></i>

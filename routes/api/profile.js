@@ -148,7 +148,6 @@ router.delete('/', auth, async (req, res) => {
 //! @access   Private
 router.put('/experience', [auth,[
   check('title', `Title is required`).not().isEmpty(),
-  check('company', `Company is required`).not().isEmpty(),
   check('from', `From date is required`).not().isEmpty()
 
 
@@ -157,11 +156,10 @@ router.put('/experience', [auth,[
   if(!errors.isEmpty()){
     return res.status(400).json({errors: errors.array()})
   }
-  const {title, company, location, from , to, current, description} = req.body;
+  const {title,  location, from , to, current, description} = req.body;
 
   const newExp = {
     title,
-    company,
     location,
     from,
     to,
@@ -192,7 +190,7 @@ router.delete('/experience/:exp_id', auth, async(req, res)=> {
     res.json(profile)
   } catch (error) {
     console.error(error.message)
-    res.status(500).send(`Server Error`)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 //! @route    PUT api/profile/education
@@ -228,7 +226,7 @@ router.put('/education', [auth,[
     res.json(profile)
   } catch (error) {
     console.error(error.message)
-    res.status(500)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 //! @route    DELETE api/profile/education/:exp_id
@@ -245,7 +243,7 @@ router.delete('/education/:edu_id', auth, async(req, res)=> {
     res.json(profile)
   } catch (error) {
     console.error(error.message)
-    res.status(500).send(`Server Error`)
+    res.status(500).json({msg:`SERVER ERROR`})
   }
 })
 
@@ -278,7 +276,7 @@ router.get('/github/:username', (req, res) => {
     });
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({msg: `SERVER ERROR`});
   }
 });
 
