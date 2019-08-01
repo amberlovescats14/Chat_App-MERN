@@ -1,0 +1,66 @@
+.one {
+  margin-right: 10px;
+  animation: slide 2s linear;
+  animation-fill-mode: forwards;
+  height: 60px;
+  width: 80px;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+}
+.two {
+  height: 60px;
+  width: 80px;
+  animation: slide2 2s linear;
+  animation-fill-mode: forwards;
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px) ;
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-300px) ;
+  }
+  50% {
+    opacity: 2;
+    transform: translateX(-200px) ;
+  }
+  75% {
+    opacity: 3;
+    transform: translateX(-100px) ;
+  }
+  100% {
+    opacity: 4;
+    transform: translateX(0) ;
+  }
+}
+
+
+
+@keyframes slide2 {
+  0% {
+    opacity: 0;
+    transform: translateX(400px) ;
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(300px) ;
+  }
+  50% {
+    opacity: 2;
+    transform: translateX(200px) ;
+  }
+  75% {
+    opacity: 3;
+    transform: translateX(100px) ;
+  }
+  100% {
+    opacity: 4;
+    transform: translateX(0) ;
+  }
+
+}
