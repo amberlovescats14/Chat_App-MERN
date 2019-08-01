@@ -3,7 +3,6 @@ import './Map.css'
 import { Media, Card} from 'react-bootstrap'
 import moment from 'moment'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
-import Calendar from 'react-calendar';
 const google = window.google = window.google ? window.google : {}
 
 export class Runs extends Component {
@@ -52,6 +51,8 @@ export class Runs extends Component {
     return (
       <div id="run-container" 
       className="container-fluid">
+            <img src="https://lh4.googleusercontent.com/proxy/gdKMsKqzMFQ1xEVJf9lNNfL7pw_HG3DaHZij1yJPHGPLQYzY_FXqVrSsC0Q2VK49HPML25NGCls545UIGYmTs6y11TAXtLcKAv_HmKA=w3840-h2160-p-k-no-nd-mv" alt="space" className="space"/>
+
       <div id="header-container">
         <h1 style={{color: '#efefef'}}>5K Races in San Antonio</h1>
         <img src="https://avatars3.githubusercontent.com/u/369874?s=280&v=4" alt="e" className="e"/>
@@ -62,7 +63,7 @@ export class Runs extends Component {
         <ul>
           {this.props.runDATA.map((item, i)=> {
             return  (
-              <Card className="box">
+              <Card className="boxing">
               <Media>
                 <img id="runImg"
                 src={item.logo.original.url} alt="runIMG" thumbnail/>
@@ -122,16 +123,23 @@ export class Runs extends Component {
       </div>
       </div>
       <div id="bottom-container">
-      <div id="calendar">
-
-        <Calendar id="thecalendar"
-          onChange={this.onChange}
-          value={this.state.dateNow}
-          weekNumbers={true}
-
-        />
-      </div>
-
+      <div class ="outerBorder">
+        <div class ="innerBorder">
+          <img src={require('./img/momAndI.JPG')}
+          style={{width: '100%', height: '100%'}} alt="fonferek falls" />
+     </div>
+        </div>
+      <div class ="outerBorder" style={{transform: 'rotate(-90deg)'}}>
+        <div class ="innerBorder">
+          <img        src={require('./img/me at run.JPG')} alt="fonferek falls" />
+     </div>
+        </div>
+        <div class ="outerBorder">
+        <div class ="innerBorder">
+          <img src={require('./img/Screen Shot 2019-08-01 at 1.37.16 PM.png')}
+          style={{width: '100%', height: '100%'}} alt="fonferek falls" />
+     </div>
+        </div>
       </div>
       </div>
     )
