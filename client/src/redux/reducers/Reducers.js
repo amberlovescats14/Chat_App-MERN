@@ -124,6 +124,12 @@ export const getPosts = (state= postInitialState, action) => {
       posts: payload,
       loading: false
     }
+    case `DELETE_POST`: 
+    return {
+      ...state,
+      posts: state.post.filter(post => post._id !== payload),
+      loading: false
+    }
     case `POST_ERROR`:
     return {
       error: payload,
@@ -133,11 +139,12 @@ export const getPosts = (state= postInitialState, action) => {
       return {
         ...state,
         posts: state.getPosts.posts.map(post =>
-          post._id === payload.id ? { ...post, likes: payload.likes } : post
-        ),
+          post._id === payload._id ? { ...post, likes: payload.likes } : post),
         loading: false
       };
-    default: return state
+    default: return {
+    ...state
+    }
   }
 }
 //! EVENTBRITE
@@ -154,6 +161,7 @@ const location = (state=[], action) => {
     default: return state
   }
 }
+
 
 
 

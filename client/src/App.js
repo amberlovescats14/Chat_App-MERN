@@ -19,6 +19,7 @@ import Map from './containers/RunsContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import Contact from './components/contact/Contact'
+// import NotFound from './components/layout/NotFound'
 import { loadUser } from './redux/actions/Actions'
 import './App.css';
 
@@ -54,6 +55,7 @@ const App = () => {
       <PrivateRoute exact path='/posts' component={Posts}/>
       <PrivateRoute exact path='/music' component={Music}/>
       <PrivateRoute exact path='/map' component={Map}/>
+      {/* <Route component={NotFound}/> */}
     </Switch>
   </Fragment>
   </BrowserRouter>

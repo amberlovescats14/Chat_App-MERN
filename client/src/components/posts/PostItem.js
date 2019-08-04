@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 
 const PostItem = props => {
-  const { auth, loading, addLike, removeLike } = props
+  const { auth, loading, addLike, removeLike, deletePost } = props
   const { _id, name, avatar, user, likes, comments, date, text} = props.eachPost
   console.log(`PROPS: `, props)
   return (
@@ -29,14 +29,14 @@ const PostItem = props => {
                 Posted on <Moment format="MM/DD/YYY">{date}</Moment>
             </p>
             <button type="button" className="btn btn-light"
-            onClick={(_id )=> addLike(_id)}>
+            onClick={ e => addLike(_id)}>
               <i className="fas fa-thumbs-up"></i> {' '}
               {likes.length > 0 && (
                 <span>{likes.length}</span>
               )}
             </button>
             <button type="button" className="btn btn-light"
-            onClick={(_id)=> removeLike(_id)}>
+            onClick={e => removeLike(_id)}>
               <i className="fas fa-thumbs-down"></i>
             </button>
             <Link to={`/post/${_id}`} className="btn btn-primary">
@@ -45,10 +45,12 @@ const PostItem = props => {
                 <span className='comment-count'> {comments.length}</span>
                 )}
             </Link>
-            {!loading && user === auth.id && (
+            {/* this is the post user and the logged in user*/}
+            {!loading && user === auth.user._id && (
             <button      
             type="button"
-            className="btn btn-danger">
+            className="btn btn-danger"
+            onClick={e => deletePost(_id)}>
             <i className="fas fa-times"></i>
           </button>
             )}
@@ -61,6 +63,9 @@ const PostItem = props => {
 PostItem.propTypes = {
   eachPost: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
+  addLike: PropTypes.func.isRequired,
+  removeLike: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired
 }
 
 export default PostItem

@@ -27,7 +27,7 @@ router.get('/me', auth, async (req, res) => {
     res.json(profile);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).json({msg: `SERVER ERROR`});
   }
 });
 
@@ -92,7 +92,7 @@ router.get('/me', auth, async (req, res) => {
       res.json(profile)
     } catch (error) {
       console.error(error.message)
-      res.status(500).send(`Server Error`)
+      res.status(500).json({msg: `SERVER ERROR`})
     }
    })
 //! @route    GET api/profile
@@ -104,7 +104,7 @@ router.get('/', async (req, res) => {
     res.json(profile)
   } catch (error) {
     console.error(error.message)
-    res.status(500).send(`Server Error`)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 
@@ -123,7 +123,7 @@ router.get('/user/:user_id', async (req, res) => {
       return res.status(400).json({msg: `Profile not found`})
     }
     console.error(error.message)
-    res.status(500).send(`Server Error`)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 //! @route    DELETE api/profile
@@ -140,7 +140,7 @@ router.delete('/', auth, async (req, res) => {
     res.json({msg: `User deleted!`})
   } catch (error) {
     console.error(error.message)
-    res.status(500).send(`Server Error`)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 //! @route    PUT api/profile/experience
@@ -173,7 +173,7 @@ router.put('/experience', [auth,[
     res.json(profile)
   } catch (error) {
     console.error(error.message)
-    res.status(500)
+    res.status(500).json({msg: `SERVER ERROR`})
   }
 })
 //! @route    DELETE api/profile/experience/:exp_id

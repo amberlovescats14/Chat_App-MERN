@@ -1,18 +1,19 @@
 import PostItem from '../../components/posts/PostItem'
 import { connect } from 'react-redux'
-import { addLike, removeLike } from '../../redux/actions/Actions'
+import { addLike, removeLike, deletePost } from '../../redux/actions/Actions'
 
 
 const mapStateToProps = state => ({
-  auth: state.register.user,
+  auth: state.register,
   loading: state.getPosts.loading,
   
 
 })
 
 const mapDispatchToProps = dispatch => ({
-  addLike: (id) => dispatch(addLike(id)),
-  removeLike: (id) => dispatch(removeLike(id))
+  addLike: (_id) => dispatch(addLike(_id)),
+  removeLike: (_id) => dispatch(removeLike(_id)),
+  deletePost: (id) => dispatch(deletePost(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostItem)
