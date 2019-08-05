@@ -16,7 +16,7 @@ const Dashboard = (props) => {
   return (
     props.auth.loading && props.profile === null ? <Spinner/> : <div className="container mx-4 "
     style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-      <h1 className="large text-primary">Dashboard</h1>
+      <h1 className="large text-primary">Profile</h1>
       {/* //This will be here weather the person has a profile or not */}
       <p className="lead">
       <i className="fas fa-user"></i>  Welcome {' '}

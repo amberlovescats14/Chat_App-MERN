@@ -147,8 +147,10 @@ export const getPosts = (state= postInitialState, action) => {
     }
   }
 }
+
+
 //! EVENTBRITE
-export const getRuns = (state=[], action) => {
+export const getRuns = (state= [], action) => {
   switch(action.type){
     case "SET_RUNS":
     return state.concat(action.value);

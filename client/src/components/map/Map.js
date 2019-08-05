@@ -13,11 +13,13 @@ export class Runs extends Component {
       activeMarker: {},
       selectedPlace: {},
       dateNow: new Date(),
-      dateJuly: "07/08/2019"
+      dateJuly: "07/08/2019",
+      loading: true
     }
   }
   componentDidMount = () => {
     this.props.getRuns()
+    this.setState({ loading: !this.state.loading  });
   }
   onMarkerClick = (props, marker, e) =>
   this.setState({

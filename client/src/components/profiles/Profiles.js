@@ -12,9 +12,9 @@ const Profiles = props => {
     <div className="container mx-4">
       {loading ? <Spinner/> : 
     <Fragment>
-      <h1 className="large text-primary">Developers</h1>
+      <h1 className="large text-primary">Runners</h1>
       <p className="lead">
-      <i className="fab fa-connectdevelop"></i> Browse and connect with developers
+      <i className="fab fa-connectdevelop"></i> Browse and connect with fellow runners
       </p>
       <div className="profiles">
       {profiles.length > 0 ? (

@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
 .contact {
-  background-image: url('http://www.webdesigndev.com/wp-content/uploads/2017/05/006817-Brand-New-Set-Of-40-Material-Design-Backgrounds-.jpg');
-  background-size: cover;
-  background-position: center;
+  background-image: url('../tabPanel/img/full-bloom.png');
   width: 100vw;
   height: 100vh;
   font-family: 'Noto Sans TC', sans-serif;
+}
+#bottom {
+  width: 100%;
+  display: flex;
+  .left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .styles {
+      width: 40%;
+      height: 30%;
+      margin: auto
+    }
+  }
 }
