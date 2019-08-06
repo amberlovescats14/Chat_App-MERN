@@ -2,8 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Color from '@material-ui/core'
 import SimpleTabs from './tabPanel/SimpleTabs'
-
+import { createMuiTheme } from '@material-ui/core'
 import './sass/contact.css'
 
 const useStyles = makeStyles(theme => ({
@@ -13,12 +14,26 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     textAlign: 'center',
-    color: "secondary.main"
+    color: "secondary.main",
+        palette: {
+      primary: { main: '#efefef'},
+      secondary: { main: '#000000'}
+    }
   },
+    //   palette: {
+    //   primary: { main: '#efefef'},
+    //   secondary: { main: '#000000'}
+    // }
 }));
 
 export default function Contact() {
   const classes = useStyles();
+  // const theme = createMuiTheme({
+  //   palette: {
+  //     primary: { main: '#efefef'},
+  //     secondary: { main: '#000000'}
+  //   }
+  // })
 
   return (
     <div className="container contact">
@@ -26,7 +41,7 @@ export default function Contact() {
       <Grid container spacing={3}
       style={{marginTop: '40px'}}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}
+          <Paper className={classes.paper} color="secondary.main"
          >Amber Jones</Paper>
         </Grid>
         <Grid item xs={6}>

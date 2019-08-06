@@ -34,5 +34,12 @@ export default {
     repos: [],
     loading: true,
     error: {}
-  }
+  },
+  register: {
+    token: localStorage.getItem('token'),
+    isAuthenticated: null,
+    loading: true,
+    user: null
+  },
+  alert: []
 }

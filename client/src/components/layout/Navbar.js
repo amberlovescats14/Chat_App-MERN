@@ -45,14 +45,15 @@ const Navbar = (props) => {
   const guestLinks = (
     <ul className="navbar-collapse">
         <li>
-      <Link to='/profiles'>Developers</Link>
-    </li>
-
-    <li>
       <Link to='/'>
         <i className='fas fa-code'/> PACE
       </Link>
     </li>
+        <li>
+      <Link to='/profiles'>Runners</Link>
+    </li>
+
+
     <li>
       <Link to='/register'>
         Register

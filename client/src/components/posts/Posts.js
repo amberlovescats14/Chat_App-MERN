@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react'
 import Spinner from '../layout/Spinner'
 import PostItem from '../../containers/posts/PostItemContainer'
+import PostFormContainer from '../../containers/posts/PostFormContainer'
 import PropTypes from 'prop-types'
 
 const Posts = props => {
@@ -19,6 +20,7 @@ const Posts = props => {
       <p className="lead">
       <i className="fas fa-user"></i> Welcome to the community!
       </p>
+      <PostFormContainer />
       <div className="posts">
         {posts.map(p => {
           console.log(`POSTS IN POST: `, p)

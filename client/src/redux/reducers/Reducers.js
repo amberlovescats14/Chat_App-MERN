@@ -66,18 +66,17 @@ const profileState = {
   error: {}
 }
 export const getCurrentProfile = (state = profileState, action) => {
-  const { type, payload, profiles } = action
+  const { type, payload } = action
   switch(type){
     case `GET_PROFILE`: 
     case `UPDATE_PROFILE`:
     return {
       ...state,
-      payload,
+      profile: payload,
       loading: false
     }
     //PLURAL
     case `GET_PROFILES`: 
-    debugger
     return {
       ...state,
       profiles: payload,
@@ -120,10 +119,15 @@ export const getPosts = (state= postInitialState, action) => {
   const { type, payload } = action
   switch(type){
     case `GET_POSTS`:
-    debugger
     return {
       ...state,
       posts: payload,
+      loading: false
+    }
+    case `ADD_POST`:
+    return {
+      ...state,
+      posts: [payload.oldPosts, payload.newPosts],
       loading: false
     }
     case `DELETE_POST`:
@@ -166,7 +170,7 @@ const location = (state=[], action) => {
   }
 }
 
-const posts = (state = []) => state
+// const posts = (state = []) => state
 
 
 export default combineReducers({

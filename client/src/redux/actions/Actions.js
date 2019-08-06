@@ -141,7 +141,6 @@ export const getProfiles = () => async (dispatch , getState)=> {
     
     const res = await axios.get('/api/profile')
     const { getCurrentProfile } = getState()
-    debugger
     //PLURAL PROFILES
     dispatch({
       type: `GET_PROFILES`,
@@ -373,7 +372,6 @@ export const getPosts = () => async dispatch => {
       payload: res.data
     })
   } catch (err) {
-    debugger
     dispatch({
       type: `POST_ERROR`,
       payload: {err: err}
@@ -443,6 +441,38 @@ export const deletePost = id => async (dispatch, getState) => {
     })
     dispatch(
       setAlert(`Post Removed`, 'success')
+    )
+  } catch (err) {
+    dispatch({
+      type: `POST_ERROR`,
+      payload: {
+        msg: err.response,
+        status: err.response.status
+      }
+    })
+  }
+}
+
+//! ADD Post
+export const addPost = formData => async (dispatch, getState) => {
+  const { getPosts } = getState()
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  console.log(`HELLO`)
+try {
+     const res = await axios.post('/api/posts', formData, config)
+    dispatch({
+      type: `ADD_POST`,
+      payload: {
+        oldPosts: getPosts.posts,
+        newPosts: res.data
+      }
+    })
+    dispatch(
+      setAlert(`Post Created`, 'success')
     )
   } catch (err) {
     dispatch({
