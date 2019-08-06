@@ -5,11 +5,12 @@ import PropTypes from 'prop-types'
 
 const Posts = props => {
   const { getPosts, posts, loading } = props
+  console.log('LOADING', loading)
+  console.log('POSTS', posts)
 
   console.log(`POSTS!!!!!!!!!: `, props.posts)
   useEffect(()=> {
     getPosts()
-
   }, [getPosts])
   return (
     loading ? <Spinner/> :

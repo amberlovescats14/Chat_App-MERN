@@ -66,17 +66,18 @@ const profileState = {
   error: {}
 }
 export const getCurrentProfile = (state = profileState, action) => {
-  const { type, payload } = action
+  const { type, payload, profiles } = action
   switch(type){
     case `GET_PROFILE`: 
     case `UPDATE_PROFILE`:
     return {
       ...state,
-      profile: payload,
+      payload,
       loading: false
     }
     //PLURAL
     case `GET_PROFILES`: 
+    debugger
     return {
       ...state,
       profiles: payload,
@@ -110,7 +111,7 @@ export const getCurrentProfile = (state = profileState, action) => {
 //! This is for post
 const postInitialState = {
   posts: [],
-  post: null,
+  post: null, 
   loading: true,
   error: {}
 }
@@ -118,27 +119,28 @@ const postInitialState = {
 export const getPosts = (state= postInitialState, action) => {
   const { type, payload } = action
   switch(type){
-    case `GET_POSTS`: 
+    case `GET_POSTS`:
+    debugger
     return {
       ...state,
       posts: payload,
       loading: false
     }
-    case `DELETE_POST`: 
+    case `DELETE_POST`:
     return {
       ...state,
-      posts: state.post.filter(post => post._id !== payload),
+      posts: payload.posts.filter(post => post._id !== payload.id),
       loading: false
     }
-    case `POST_ERROR`:
-    return {
-      error: payload,
-      loading: false
-    }
+    // case `POST_ERROR`:
+    // return {
+    //   error: payload,
+    //   loading: false
+    // }
     case `UPDATE_LIKES`:
       return {
         ...state,
-        posts: state.getPosts.posts.map(post =>
+        posts: payload.getPosts.posts.map(post =>
           post._id === payload._id ? { ...post, likes: payload.likes } : post),
         loading: false
       };
@@ -164,7 +166,7 @@ const location = (state=[], action) => {
   }
 }
 
-
+const posts = (state = []) => state
 
 
 export default combineReducers({

@@ -131,18 +131,22 @@ export const getCurrentProfile = () => async dispatch => {
 
 
 //! GET ALL PROFILES
-export const getProfiles = () => async dispatch => {
+export const getProfiles = () => async (dispatch , getState)=> {
   //clear all before seeing all profiles
   dispatch({
     type: `CLEAR_PROFILE`
   })
 
   try {
+    
     const res = await axios.get('/api/profile')
+    const { getCurrentProfile } = getState()
+    debugger
     //PLURAL PROFILES
     dispatch({
       type: `GET_PROFILES`,
-      payload: res.data
+      payload: res.data,
+      profiles: getCurrentProfile.profiles
     })
   } catch (err) {
     dispatch({
@@ -369,32 +373,33 @@ export const getPosts = () => async dispatch => {
       payload: res.data
     })
   } catch (err) {
+    debugger
     dispatch({
       type: `POST_ERROR`,
-      payload: {msg: err.response.statusText, status: err.response.status}
+      payload: {err: err}
     })
   }
 }
 
 //! ADDING A LIKE
 
-export const addLike = _id => async dispatch => {
+export const addLike = _id => async (dispatch, getState) => {
   try {
     const res = await axios.put(`/api/posts/like/${_id}`);
-    console.log(`RESSSS`, res)
+    const { getPosts } = getState()
     dispatch({
       type: `UPDATE_LIKES`,
       payload: {
         _id,
-        likes: res.data
+        likes: res.data,
+        getPosts
       }
     });
   } catch (err) {
     dispatch({
       type: `POST_ERROR`,
       payload: { 
-        msg: err.response.statusText,
-         status: err.response.status
+        err: err
          }
     });
   }
@@ -402,16 +407,18 @@ export const addLike = _id => async dispatch => {
 
 
 //! REMOVE A LIKE
-export const removeLike = (_id) => async dispatch => {
+export const removeLike = (_id) => async (dispatch , getState)=> {
   
   try {
     const res = await axios.put(`/api/posts/unlike/${_id}`)
+    const { getPosts } = getState()
 
     dispatch({
       type: `UPDATE_LIKES`,
       payload: {
         _id,
-        likes: res.data
+        likes: res.data,
+        getPosts
       }
     })
   } catch (err) {
@@ -423,14 +430,15 @@ export const removeLike = (_id) => async dispatch => {
 }
 
 //! DELETE Post
-export const deletePost = id => async dispatch => {
+export const deletePost = id => async (dispatch, getState) => {
   try {
      await axios.delete(`/api/posts/${id}`)
-
+     const { getPosts } = getState()
     dispatch({
       type: `DELETE_POST`,
       payload: { 
-        id
+        id,
+        posts: getPosts.posts
         }
     })
     dispatch(
@@ -440,7 +448,7 @@ export const deletePost = id => async dispatch => {
     dispatch({
       type: `POST_ERROR`,
       payload: {
-        msg: err.response.statusText,
+        msg: err.response,
         status: err.response.status
       }
     })

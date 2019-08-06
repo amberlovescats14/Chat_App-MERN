@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 
 const PostItem = props => {
-  const { auth, loading, addLike, removeLike, deletePost } = props
-  const { _id, name, avatar, user, likes, comments, date, text} = props.eachPost
+  const { auth, loading, addLike, removeLike, deletePost, eachPost } = props
+  const { _id, name, avatar, user, likes, comments, date, text} = eachPost
   console.log(`PROPS: `, props)
   return (
     <Fragment>
