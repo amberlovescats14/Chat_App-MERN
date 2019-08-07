@@ -13,7 +13,7 @@ const Profile = props => {
     getProfileById(match.params.id)
   },[getProfileById, match.params.id])
   return (
-    <Fragment>
+    <div className="container">
       {profile === null || profile.loading ? <Spinner/> : 
     <Fragment>
       <Link to='/profiles' className="btn btn-light">
@@ -50,7 +50,7 @@ const Profile = props => {
           </div>
           {/* //EDUCATION */}
           <div className="profile-edu bg-white p-2">
-          <h2 className="text-primary">Experience</h2>
+          <h2 className="text-primary">Training</h2>
           {profile.experience.length > 0 ?
           (
             <Fragment>
@@ -71,7 +71,7 @@ const Profile = props => {
           </div>
           </div>
       </Fragment> }
-    </Fragment>
+    </div>
   )
 }
 

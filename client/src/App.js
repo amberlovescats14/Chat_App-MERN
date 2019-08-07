@@ -19,6 +19,7 @@ import Map from './containers/RunsContainer'
 import PrivateRoute from './components/routing/PrivateRoute'
 import Alert from './components/layout/Alert'
 import Contact from './components/contact/Contact'
+import Post from './containers/post/PostContainer'
 // import NotFound from './components/layout/NotFound'
 import { loadUser } from './redux/actions/Actions'
 import './App.css';
@@ -55,6 +56,7 @@ const App = () => {
       <PrivateRoute exact path='/posts' component={Posts}/>
       <PrivateRoute exact path='/music' component={Music}/>
       <PrivateRoute exact path='/map' component={Map}/>
+      <PrivateRoute exact path='/posts/:id' component={Post}/>
       {/* <Route component={NotFound}/> */}
     </Switch>
   </Fragment>

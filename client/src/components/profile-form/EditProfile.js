@@ -50,7 +50,7 @@ const EditProfile = (props) => {
       youtube: profile.loading || !profile.social ? '' : profile.social.youtube,
       instagram: profile.loading || !profile.social ? '' : profile.social.instagram
     });
-  }, [profile.loading, getCurrentProfile, profile]);
+  }, [profile.loading]);
 
 
 
@@ -67,8 +67,9 @@ const EditProfile = (props) => {
   }
   console.log(`EDIT PROFILE: FORMDATA:`, formData)
   console.log(`EDIT PROPS:`, props.profile.user)
+  console.log(`again`)
   return (
-    <Fragment>
+    <div className="container">
        {/* <nav className="navbar bg-dark">
       <h1>
         <Link to='/'><i className="fas fa-code"></i> DevConnector</Link>
@@ -198,7 +199,7 @@ const EditProfile = (props) => {
         <Link className="btn btn-light my-1" to="dashboard">Go Back</Link>
       </form>
       </section>
-    </Fragment>
+    </div>
   )
 }
 

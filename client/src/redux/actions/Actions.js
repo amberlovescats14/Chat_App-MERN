@@ -1,6 +1,7 @@
 import uuid from 'uuid'
 import axios from 'axios'
 import settingAuthToken from '../../util/setAuthToken'
+import { TabContainer } from 'react-bootstrap';
 
 
 export const setAlert = (msg, alertType, timeout = 2000) => dispatch => {
@@ -481,6 +482,85 @@ try {
         msg: err.response,
         status: err.response.status
       }
+    })
+  }
+}
+//!ADD COMMENT. SINGLE POST
+
+export const addComment = (postId, formData) => async (dispatch, getState) => {
+  const { getPosts } = getState()
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+try {
+     const res = await axios.post(`/api/posts/comment/${postId}`, formData, config)
+    dispatch({
+      type: `ADD_COMMENT`,
+      payload: {
+        newComment: res.data,
+        originalPost: getPosts.post
+      }
+    })
+    dispatch(
+      setAlert(`Comment Added`, 'success')
+    )
+  } catch (err) {
+    dispatch({
+      type: `POST_ERROR`,
+      payload: {
+        msg: err.response,
+        status: err.response.status
+      }
+    })
+  }
+}
+
+
+//!DELETTE COMMENT. SINGLE POST
+export const deleteComment = (postId, commentId) => async (dispatch, getState) => {
+  const { getPosts } = getState()
+
+try {
+    await axios.delete(`/api/posts/comment/${postId}/${commentId}`)
+    dispatch({
+      type: `REMOVE_COMMENT`,
+      payload: {
+        commentId,
+        originalPost: getPosts.post
+      }
+    })
+    dispatch(
+      setAlert(`Comment Removed`, 'success')
+    )
+  } catch (err) {
+    dispatch({
+      type: `POST_ERROR`,
+      payload: {
+        msg: err.response,
+        status: err.response.status
+      }
+    })
+  }
+}
+
+
+
+//!GET SINGLE POST
+//! getting posts
+export const getPost = id => async dispatch => {
+  try {
+    const res = await axios.get(`/api/posts/${id}`)
+
+    dispatch({
+      type: `GET_POST`,
+      payload: res.data
+    })
+  } catch (err) {
+    dispatch({
+      type: `POST_ERROR`,
+      payload: {err: err}
     })
   }
 }

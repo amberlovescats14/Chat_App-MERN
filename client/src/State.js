@@ -1,5 +1,8 @@
 export default {
-  runDATA: [],
+  runDATA: {
+    runs: [],
+    loading: true
+  },
   location: [
     {name: 'Comanche Hill', title: 'Beach Day', 
     position:{lat: 29.424601, lng: -98.680008}}, 

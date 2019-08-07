@@ -3,8 +3,9 @@ import { connect } from 'react-redux'
 import { getRuns } from '../redux/actions/Actions'
 
 const mapStateToProps = (state) => ({
-  runDATA: state.runDATA,
-  location: state.location
+  runDATA: state.runDATA.runs,
+  location: state.location,
+  loading: state.runDATA.loading
 })
 const mapDispatchToProps = (dispatch) => ({
   getRuns: (users) => dispatch(getRuns(users))

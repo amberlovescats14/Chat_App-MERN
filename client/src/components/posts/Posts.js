@@ -2,6 +2,7 @@ import React, { useEffect} from 'react'
 import Spinner from '../layout/Spinner'
 import PostItem from '../../containers/posts/PostItemContainer'
 import PostFormContainer from '../../containers/posts/PostFormContainer'
+import Post from '../../containers/post/PostContainer'
 import PropTypes from 'prop-types'
 
 const Posts = props => {

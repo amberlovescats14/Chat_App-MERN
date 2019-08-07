@@ -3,6 +3,7 @@ import './Map.css'
 import { Media, Card} from 'react-bootstrap'
 import moment from 'moment'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
+import Spinner from '../layout/Spinner'
 const google = window.google = window.google ? window.google : {}
 
 export class Runs extends Component {
@@ -45,12 +46,8 @@ export class Runs extends Component {
       }
     };
     render() {
-    //   console.log(`MAP PROP:`, this.props)
-    
-    // console.log(`API: `, process.env.REACT_APP_API_KEY)
-    // console.log(this.props.runDATA)
-    // console.log("location:" + this.props.location[1].position.lat)
-    return (
+      return (
+        this.props.loading ? <Spinner /> : 
       <div id="run-container" 
       className="container-fluid">
             <img src="https://lh4.googleusercontent.com/proxy/gdKMsKqzMFQ1xEVJf9lNNfL7pw_HG3DaHZij1yJPHGPLQYzY_FXqVrSsC0Q2VK49HPML25NGCls545UIGYmTs6y11TAXtLcKAv_HmKA=w3840-h2160-p-k-no-nd-mv" alt="space" className="space"/>
@@ -67,16 +64,17 @@ export class Runs extends Component {
         <ul>
           {this.props.runDATA.map((item, i)=> {
             return  (
-              <Card className="boxing">
+              <Card className="boxing" key={i}>
               <Media>
-                <img id="runImg"
+                <img id="runImg" 
                 src={item.logo.original.url} alt="runIMG" thumbnail/>
-              <Media.Body>
-                <p>{i +1}</p>
-                <p id="title">{item.name.text}</p>
+              <Media.Body >
+                {/* <p>{i +1}</p> */}
                 <p>
                 {moment(item.start.local).format('dddd, MMMM DD YYYY')}
                 </p>
+                <p id="title">{item.name.text}</p>
+
               </Media.Body>
               </Media>
               </Card>
@@ -127,19 +125,20 @@ export class Runs extends Component {
       </div>
       </div>
       <div id="bottom-container">
-      <div class ="outerBorder">
-        <div class ="innerBorder">
+      
+      <div className ="outerBorder">
+        <div className ="innerBorder">
           <img src={require('./img/momAndI.JPG')}
           style={{width: '100%', height: '100%'}} alt="fonferek falls" />
      </div>
         </div>
-      <div class ="outerBorder" style={{transform: 'rotate(-90deg)'}}>
-        <div class ="innerBorder">
+      <div className ="outerBorder" style={{transform: 'rotate(-90deg)'}}>
+        <div className ="innerBorder">
           <img        src={require('./img/me at run.JPG')} alt="fonferek falls" />
      </div>
         </div>
-        <div class ="outerBorder">
-        <div class ="innerBorder">
+        <div className ="outerBorder">
+        <div className ="innerBorder">
           <img src={require('./img/Screen Shot 2019-08-01 at 1.37.16 PM.png')}
           style={{width: '100%', height: '100%'}} alt="fonferek falls" />
      </div>

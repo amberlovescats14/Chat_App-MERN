@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-const PostForm = props => {
-  const { addPost } = props
-  const [ text, setText ] = useState('')
+
+const CommentForm = props => {
+  const { addComment } = props
+  const { postId } = props
+  const [ text, setText] = useState('')
   return (
     <div>
+          <div>
       <div class="post-form">
         <div class="bg-primary p">
-          <h3>Leave A Comment...</h3>
+          <h3>How does this make you feel...</h3>
         </div>
         <form class="form my-1"
         onSubmit={e => {
           e.preventDefault()
-          addPost({text})
+          addComment(postId, {text})
           setText('')
         }}>
           <textarea
@@ -30,11 +33,13 @@ const PostForm = props => {
       </div>
 
     </div>
+
+    </div>
   )
 }
 
-PostForm.propTypes = {
-  addProps: PropTypes.func.isRequired,
+CommentForm.propTypes = {
+  addComment : PropTypes.func.isRequired,
 }
 
-export default PostForm
+export default CommentForm

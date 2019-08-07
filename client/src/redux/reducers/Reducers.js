@@ -124,6 +124,12 @@ export const getPosts = (state= postInitialState, action) => {
       posts: payload,
       loading: false
     }
+    case `GET_POST`:
+    return {
+      ...state,
+      post: payload,
+      loading: false
+    }
     case `ADD_POST`:
     return {
       ...state,
@@ -148,18 +154,41 @@ export const getPosts = (state= postInitialState, action) => {
           post._id === payload._id ? { ...post, likes: payload.likes } : post),
         loading: false
       };
+    case `ADD_COMMENT`:
+    return {
+      ...state,
+      post: {...payload.originalPost, comments: payload.newComment},
+      loading: false
+    }
+    case `REMOVE_COMMENT`:
+    return {
+      ...state,
+      post: {
+        ...payload.originalPost,
+        comments: payload.originalPost.comments.filter(comment => comment._id !== payload.commentId)
+      },
+      loading: false
+    }
     default: return {
     ...state
     }
   }
 }
 
-
+const runInitialState = {
+  
+    runData: [],
+    loading: true
+  
+}
 //! EVENTBRITE
-export const getRuns = (state= [], action) => {
+export const getRuns = (state= runInitialState, action) => {
   switch(action.type){
-    case "SET_RUNS":
-    return state.concat(action.value);
+    case `SET_RUNS`:
+    return {
+      runs: action.value.filter((v, i) => i <= 11),
+      loading: false
+    };
     default: 
     return state
   }
