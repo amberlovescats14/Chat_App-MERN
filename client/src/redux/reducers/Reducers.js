@@ -127,7 +127,7 @@ export const getPosts = (state= postInitialState, action) => {
     case `ADD_POST`:
     return {
       ...state,
-      posts: [payload.oldPosts, payload.newPosts],
+      posts: payload.oldPosts.concat(payload.newPosts),
       loading: false
     }
     case `DELETE_POST`:
