@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Jockey+One');
+
+$line_height: 1;
+#wrapper {
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  padding: o;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Jockey One', sans-serif;
+  display: grid;
+  grid-template-rows: repeat(20, minmax(20px, 1fr) ) ;
+  grid-template-columns: repeat(20, minmax(20px, 1fr) );
+  .dot {
+    grid-row: 2/ span 2;
+    grid-column: 4;
+    position: relative;
+    .dotIcon {
+      position: absolute;
+      bottom: 0;
+      left: 0
+    }
+  };
+  .lookLifestyle {
+    grid-row: 2;
+    grid-column: 7;
+    position: relative;
+    .ll {
+      line-height: $line_height
+    }
+  };
+  .shopSales {
+    grid-row: 2;
+    grid-column: 10;
+    .ss {
+      line-height: $line_height
+    }
+  };
+  .faqDelivery {
+    grid-row: 2;
+    grid-column: 13;
+    .faq {
+      line-height: $line_height;
+    }
+  };
+  .hamburger {
+    grid-row: 2/ span 2;
+    grid-column: 16/ span 3;
+    position: relative;
+    .hamy {
+      position: absolute;
+      bottom: 0;
+    }
+    .search{
+      position: absolute;
+      bottom: 0;
+      right: 0
+    }
+  }
+  .picture {
+    grid-row: 4/ span 14;
+    grid-column: 1 / span 3;
+    .r1 {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .fashion {
+    grid-row: 4/ span 3;
+    grid-column: 7/ span 2;
+    position: relative;
+    .f {
+      color: #d8d8d8;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  .bigLetters {
+    grid-row: 6/ span 6;
+    grid-column: 7/ span 8;
+    position: relative;
+    text-align: center;
+    line-height: 1;
+    .nikeRun {
+      font-size: 15vh;
+      letter-spacing: 7px;
+      margin-top: 0
+    }
+
+  }
+  .runner2 {
+    grid-row: 5 / span 11;
+    grid-column: 16 / 21;
+    .r2 {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .horizontal {
+    grid-row: 11/ span 3;
+    grid-column: 12/ span 5;
+    position: relative;
+    .hr {
+      height: 10px;
+      width: 90%;
+      background: black;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: 1px solid black
+      
+    }
+  }
+  .quote {
+    grid-row: 13 / span 3;
+    grid-column: 8/ span 3;
+  }
+  .en {
+    grid-row: 19;
+    grid-column: 4;
+  }
+  .leftArrow {
+    grid-row: 19;
+    grid-column: 6/ span 2;
+    position: relative;
+    .la {
+      position: absolute;
+      bottom: 0;
+      right: 0
+    }
+  }
+  .runpic3 {
+    grid-row: 15 /-1;
+    grid-column: 11/ span 5;
+    .run3 {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .horizontal2 {
+    grid-row: 15;
+    grid-column: 15/ span 3;
+    .h2 {
+      width: 100%;
+      height: 3%;
+      background: black;
+      border: 2px solid black
+    }
+  }
+  .pace {
+    grid-row: 16/ span 3;
+    grid-column: 17/ span 2;
+    .p {
+      font-size: 5vh
+    }
+  }
+  .quote2 {
+    grid-row: 19 / -1;
+    grid-column: 17 / span 3;
+    position: relative;
+    .q2 {
+      position: absolute;
+      bottom: 0;
+      right: 0
+    }
+  }
+  .lastQuote {
+    grid-row: 6/ span 5;
+    grid-column: 5/ span 2;
+    position: relative;
+    .lq {
+      transform: rotate(-90deg);
+      position: absolute;
+      bottom: 0;
+      margin-left: 30%
+    }
+  };
+  .border1 {
+    grid-row: 1/-1;
+    grid-column: 2;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border2 {
+    grid-row: 1 /-1;
+    grid-column: 4;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+  }
+  .border3 {
+    grid-row: 1/-1;
+    grid-column: 6;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border4 {
+    grid-row: 1/-1;
+    grid-column: 8;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border5 {
+    grid-row: 1/-1;
+    grid-column: 10;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border6 {
+    grid-row: 1/-1;
+    grid-column: 12;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border7 {
+    grid-row: 1/-1;
+    grid-column: 14;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border8 {
+    grid-row: 1/-1;
+    grid-column: 16;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+  .border9 {
+    grid-row: 1/-1;
+    grid-column: 18;
+    border-left: 1px solid rgba(163, 157, 157, 0.548)
+
+  }
+}
+

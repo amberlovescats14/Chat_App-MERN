@@ -4,6 +4,8 @@ import { Media, Card} from 'react-bootstrap'
 import moment from 'moment'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react'
 import Spinner from '../layout/Spinner'
+import Nike from './nikeFashion/Nike'
+
 const google = window.google = window.google ? window.google : {}
 
 export class Runs extends Component {
@@ -124,25 +126,8 @@ export class Runs extends Component {
       </Map>
       </div>
       </div>
-      <div id="bottom-container">
-      
-      <div className ="outerBorder">
-        <div className ="innerBorder">
-          <img src={require('./img/momAndI.JPG')}
-          style={{width: '100%', height: '100%'}} alt="fonferek falls" />
-     </div>
-        </div>
-      <div className ="outerBorder" style={{transform: 'rotate(-90deg)'}}>
-        <div className ="innerBorder">
-          <img        src={require('./img/me at run.JPG')} alt="fonferek falls" />
-     </div>
-        </div>
-        <div className ="outerBorder">
-        <div className ="innerBorder">
-          <img src={require('./img/Screen Shot 2019-08-01 at 1.37.16 PM.png')}
-          style={{width: '100%', height: '100%'}} alt="fonferek falls" />
-     </div>
-        </div>
+      <div id="bottom-container" style={{marginTop: '20px'}}>
+      <Nike/>
       </div>
       </div>
     )

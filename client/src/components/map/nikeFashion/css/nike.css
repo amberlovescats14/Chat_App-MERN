@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css?family=Jockey+One");
+#wrapper {
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  padding: o;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Jockey One', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (minmax(20px, 1fr))[20];
+      grid-template-rows: repeat(20, minmax(20px, 1fr));
+  -ms-grid-columns: (minmax(20px, 1fr))[20];
+      grid-template-columns: repeat(20, minmax(20px, 1fr));
+}
+
+#wrapper .dot {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/ span 2;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  position: relative;
+}
+
+#wrapper .dot .dotIcon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#wrapper .lookLifestyle {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 7;
+  grid-column: 7;
+  position: relative;
+}
+
+#wrapper .lookLifestyle .ll {
+  line-height: 1;
+}
+
+#wrapper .shopSales {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 10;
+  grid-column: 10;
+}
+
+#wrapper .shopSales .ss {
+  line-height: 1;
+}
+
+#wrapper .faqDelivery {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 13;
+  grid-column: 13;
+}
+
+#wrapper .faqDelivery .faq {
+  line-height: 1;
+}
+
+#wrapper .hamburger {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2/ span 2;
+  -ms-grid-column: 16;
+  -ms-grid-column-span: 3;
+  grid-column: 16/ span 3;
+  position: relative;
+}
+
+#wrapper .hamburger .hamy {
+  position: absolute;
+  bottom: 0;
+}
+
+#wrapper .hamburger .search {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#wrapper .picture {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 14;
+  grid-row: 4/ span 14;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+}
+
+#wrapper .picture .r1 {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper .fashion {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  grid-row: 4/ span 3;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 2;
+  grid-column: 7/ span 2;
+  position: relative;
+}
+
+#wrapper .fashion .f {
+  color: #d8d8d8;
+  position: absolute;
+  bottom: 0;
+}
+
+#wrapper .bigLetters {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 6;
+  grid-row: 6/ span 6;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 8;
+  grid-column: 7/ span 8;
+  position: relative;
+  text-align: center;
+  line-height: 1;
+}
+
+#wrapper .bigLetters .nikeRun {
+  font-size: 15vh;
+  letter-spacing: 7px;
+  margin-top: 0;
+}
+
+#wrapper .runner2 {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 11;
+  grid-row: 5 / span 11;
+  -ms-grid-column: 16;
+  -ms-grid-column-span: 5;
+  grid-column: 16 / 21;
+}
+
+#wrapper .runner2 .r2 {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper .horizontal {
+  -ms-grid-row: 11;
+  -ms-grid-row-span: 3;
+  grid-row: 11/ span 3;
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 5;
+  grid-column: 12/ span 5;
+  position: relative;
+}
+
+#wrapper .horizontal .hr {
+  height: 10px;
+  width: 90%;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 1px solid black;
+}
+
+#wrapper .quote {
+  -ms-grid-row: 13;
+  -ms-grid-row-span: 3;
+  grid-row: 13 / span 3;
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 3;
+  grid-column: 8/ span 3;
+}
+
+#wrapper .en {
+  -ms-grid-row: 19;
+  grid-row: 19;
+  -ms-grid-column: 4;
+  grid-column: 4;
+}
+
+#wrapper .leftArrow {
+  -ms-grid-row: 19;
+  grid-row: 19;
+  -ms-grid-column: 6;
+  -ms-grid-column-span: 2;
+  grid-column: 6/ span 2;
+  position: relative;
+}
+
+#wrapper .leftArrow .la {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#wrapper .runpic3 {
+  grid-row: 15 /-1;
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 5;
+  grid-column: 11/ span 5;
+}
+
+#wrapper .runpic3 .run3 {
+  width: 100%;
+  height: 100%;
+}
+
+#wrapper .horizontal2 {
+  -ms-grid-row: 15;
+  grid-row: 15;
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 3;
+  grid-column: 15/ span 3;
+}
+
+#wrapper .horizontal2 .h2 {
+  width: 100%;
+  height: 3%;
+  background: black;
+  border: 2px solid black;
+}
+
+#wrapper .pace {
+  -ms-grid-row: 16;
+  -ms-grid-row-span: 3;
+  grid-row: 16/ span 3;
+  -ms-grid-column: 17;
+  -ms-grid-column-span: 2;
+  grid-column: 17/ span 2;
+}
+
+#wrapper .pace .p {
+  font-size: 5vh;
+}
+
+#wrapper .quote2 {
+  grid-row: 19 / -1;
+  -ms-grid-column: 17;
+  -ms-grid-column-span: 3;
+  grid-column: 17 / span 3;
+  position: relative;
+}
+
+#wrapper .quote2 .q2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#wrapper .lastQuote {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 5;
+  grid-row: 6/ span 5;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-column: 5/ span 2;
+  position: relative;
+}
+
+#wrapper .lastQuote .lq {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  bottom: 0;
+  margin-left: 30%;
+}
+
+#wrapper .border1 {
+  grid-row: 1/-1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border2 {
+  grid-row: 1 /-1;
+  -ms-grid-column: 4;
+  grid-column: 4;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border3 {
+  grid-row: 1/-1;
+  -ms-grid-column: 6;
+  grid-column: 6;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border4 {
+  grid-row: 1/-1;
+  -ms-grid-column: 8;
+  grid-column: 8;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border5 {
+  grid-row: 1/-1;
+  -ms-grid-column: 10;
+  grid-column: 10;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border6 {
+  grid-row: 1/-1;
+  -ms-grid-column: 12;
+  grid-column: 12;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border7 {
+  grid-row: 1/-1;
+  -ms-grid-column: 14;
+  grid-column: 14;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border8 {
+  grid-row: 1/-1;
+  -ms-grid-column: 16;
+  grid-column: 16;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+
+#wrapper .border9 {
+  grid-row: 1/-1;
+  -ms-grid-column: 18;
+  grid-column: 18;
+  border-left: 1px solid rgba(163, 157, 157, 0.548);
+}
+/*# sourceMappingURL=nike.css.map */
