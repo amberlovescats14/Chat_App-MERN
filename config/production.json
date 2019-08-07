@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://cami123:cami123@cluster1-ov200.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret",
+  "githubClientID": "c92e568b8d248d212979",
+  "githubSecret": "c8e4050d098035e56baec1e7d0ae0638bac7e5ff"
+}
