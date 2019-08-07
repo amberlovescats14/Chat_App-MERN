@@ -67,7 +67,7 @@ export default function Contact() {
     <div className="left" >
     <img src="https://www.abeautifulsite.net/uploads/2017/02/sass.png?width=600&key=a18980ed50ba77f256a580d00ba54a8fe80d85f7a96bbe3ff3463890acc91fca" alt="sass" className="styles"
     />
-    <img src="https://t.ly/LD7W" alt="materialUI" className="styles"/>
+    <img src={require('./tabPanel/img/material.png')} alt="materialUI" className="styles"/>
     <img src="https://t.ly/qPvJ" alt="bootstrap" className="styles"/>
     </div>
     </div>
