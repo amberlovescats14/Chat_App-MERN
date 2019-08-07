@@ -13,7 +13,6 @@ export default class SearchBar extends Component {
     this.props.onSearchTermChange(term);
   }
   render() {
-    console.log(this.props)
     return (
       <div style={{ "textAlign": "center", "background": "#123456", "padding": "35px" }}>
       <input

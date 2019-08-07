@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 const ProfileGitHub = props => {
   const { username, repos, getGithubRepos } = props
-  console.log(props)
   useEffect(()=> {
     getGithubRepos(username)
   },[getGithubRepos, username])

@@ -13,7 +13,6 @@ const VideoList = (props) => {
         video={video} />
     );
   });
-console.log(`VIDEO LIST: `, videoList)
   return (
     <ul 
     style={{display: 'inline-block', width: '50%', background: '#efefef'}}>

@@ -71,7 +71,6 @@ const Navbar = (props) => {
     </li>
   </ul>
   )
-console.log(`IN THE NAV`, props.auth)
   return (
     <nav className="navbar bg-dark " >
       <h1>

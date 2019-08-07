@@ -7,10 +7,6 @@ import PropTypes from 'prop-types'
 
 const Posts = props => {
   const { getPosts, posts, loading } = props
-  console.log('LOADING', loading)
-  console.log('POSTS', posts)
-
-  console.log(`POSTS!!!!!!!!!: `, props.posts)
   useEffect(()=> {
     getPosts()
   }, [getPosts])
@@ -24,7 +20,6 @@ const Posts = props => {
       <PostFormContainer />
       <div className="posts">
         {posts.map(p => {
-          console.log(`POSTS IN POST: `, p)
           return (
             <PostItem key={p._id}  eachPost={p}/>
           )

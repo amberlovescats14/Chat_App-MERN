@@ -4,9 +4,7 @@ import './landing-scss/landing.css'
 import PropTypes from 'prop-types';
 
 const Landing = ({isAuthenticated}) => {
-  console.log(`ISAUTHENTICATED:`, isAuthenticated)
   if(isAuthenticated) {
-    console.log(`YES`)
     return <Redirect to='/dashboard'/>
   }
   return (

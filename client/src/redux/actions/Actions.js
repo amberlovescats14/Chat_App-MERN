@@ -202,7 +202,6 @@ export const createProfile = (formData, history, edit = false) => async dispatch
 
     //post request to api/profile
     const res = await axios.post('/api/profile', formData, config)
-    console.log(`RES`, res.data)
     dispatch({
       type: `GET_PROFILE`,
       payload: res.data
@@ -241,7 +240,6 @@ export const addExperience = (formData, history) => async dispatch => {
 
     //post request to api/profile
     const res = await axios.put('/api/profile/experience', formData, config)
-    console.log(`RES`, res.data)
     dispatch({
       type: `UPDATE_PROFILE`,
       payload: res.data
@@ -276,7 +274,6 @@ export const addEducation = (formData, history) => async dispatch => {
 
     //post request to api/profile
     const res = await axios.put('/api/profile/education', formData, config)
-    console.log(`RES`, res.data)
     dispatch({
       type: `UPDATE_PROFILE`,
       payload: res.data
@@ -462,7 +459,6 @@ export const addPost = formData => async (dispatch, getState) => {
       'Content-Type': 'application/json'
     }
   }
-  console.log(`HELLO`)
 try {
      const res = await axios.post('/api/posts', formData, config)
     dispatch({

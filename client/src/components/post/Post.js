@@ -8,7 +8,6 @@ import CommentItem from '../../containers/post/CommentItemContainer'
 
 const Post = props => {
   const { getPost, match, post, loading} = props
-  console.log(props)
   useEffect(()=> {
     getPost(match.params.id)
   },[getPost])

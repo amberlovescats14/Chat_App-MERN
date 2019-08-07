@@ -6,7 +6,6 @@ const ProfilesItems = props => {
   const { profile: { user:{ _id, name, avatar,}},
           profile: {status,company, location, skills }
         } = props
-        console.log(props)
   return (
     <div key={_id} className="profile bg-light">
       <img className="round-img" src={avatar} alt="avatar"/>

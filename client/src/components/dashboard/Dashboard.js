@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 // import { deleteAccount } from '../../redux/actions/Actions';
 
 const Dashboard = (props) => {
-  console.log(`DASHBOARD PROPS:`, props)
   const { getCurrentProfile } = props
   useEffect(()=> {
     getCurrentProfile()
