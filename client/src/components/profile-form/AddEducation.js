@@ -76,7 +76,7 @@ const AddEducation = props => {
                     onChange={e => {
                       setFormData({...formData, current: !current })
                       toggleDisabled(!toDateDisabled)
-                    }}/> {' '}Current School</p>
+                    }}/> {' '}Current Team</p>
         </div>
         <div className="form-group">
           <h4>To Date</h4>

@@ -142,11 +142,11 @@ export const getPosts = (state= postInitialState, action) => {
       posts: payload.posts.filter(post => post._id !== payload.id),
       loading: false
     }
-    // case `POST_ERROR`:
-    // return {
-    //   error: payload,
-    //   loading: false
-    // }
+    case `POST_ERROR`:
+    return {
+      error: payload,
+      loading: false
+    }
     case `UPDATE_LIKES`:
       return {
         ...state,
