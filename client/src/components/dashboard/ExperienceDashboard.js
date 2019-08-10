@@ -20,19 +20,19 @@ const ExperienceDashboard = props => {
   ))
 
   return (
-    <Fragment>
-      <h2 className="my-2">Experience Credentials</h2>
+    <div >
+      <h2 className="my-2 text-dark">Experience Credentials</h2>
       <table className="table">
       <thead>
         <tr>
-          <th>Race</th>
-          <th className="hide-sm">Date</th>
+          <th className="text-dark">Race</th>
+          <th className="hide-sm text-dark">Date</th>
           <th className="hide-sm"></th>
         </tr>
       </thead>
-      <tbody>{experiences}</tbody>
+      <tbody className="tableBody">{experiences}</tbody>
       </table>
-    </Fragment>
+    </div>
   )
 }
 

@@ -13,7 +13,7 @@ const Profile = props => {
     getProfileById(match.params.id)
   },[getProfileById, match.params.id])
   return (
-    <div className="container">
+    <div className="container postsOutside">
       {profile === null || profile.loading ? <Spinner/> : 
     <Fragment>
       <Link to='/profiles' className="btn btn-light">

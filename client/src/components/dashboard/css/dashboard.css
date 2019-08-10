@@ -1,0 +1,11 @@
+.dashboard {
+  background-image: url("https://www.bekasport.com/resimler/urun/running-tracks-426991.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.dashboard .tableBody {
+  background: grey;
+  color: yellow;
+}
+/*# sourceMappingURL=dashboard.css.map */

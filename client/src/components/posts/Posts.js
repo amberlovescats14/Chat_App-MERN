@@ -4,6 +4,7 @@ import PostItem from '../../containers/posts/PostItemContainer'
 import PostFormContainer from '../../containers/posts/PostFormContainer'
 import Post from '../../containers/post/PostContainer'
 import PropTypes from 'prop-types'
+import './css/posts.css'
 
 const Posts = props => {
   const { getPosts, posts, loading } = props
@@ -12,10 +13,10 @@ const Posts = props => {
   }, [getPosts])
   return (
     loading ? <Spinner/> :
-    <div className="container mx-4">
+    <div className="container mx-4 postsOutside">
       <h1 className="large text-primary">Posts:</h1>
       <p className="lead">
-      <i className="fas fa-user"></i> Welcome to the community!
+      <i className="fas fa-user text-primary"></i> Welcome to the community!
       </p>
       <PostFormContainer />
       <div className="posts">

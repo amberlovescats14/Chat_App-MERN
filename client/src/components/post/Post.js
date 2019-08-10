@@ -13,7 +13,7 @@ const Post = props => {
   },[getPost])
   return (
     loading || post === null ? <Spinner/> : 
-    <div className="container">
+    <div className="container postsOutside">
     <Link to='/posts' className="btn">Back To Posts</Link>
     <PostItem eachPost={post} showActions={false}/>
     <CommentForm postId={post._id} />

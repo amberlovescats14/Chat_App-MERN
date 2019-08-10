@@ -23,8 +23,8 @@ const Login = (props) => {
     return <Redirect to="/dashboard" />
   }
   return (
-    <div className="container mx-4">
-    <h1 className="large text-info">LogIn</h1>
+    <div className="container mx-4 postsOutside ">
+    <h1 className="large text-info ">LogIn</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
       onSubmit={e => onSubmit(e)}>

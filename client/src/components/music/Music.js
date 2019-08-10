@@ -18,7 +18,7 @@ export default class Music extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch('Miranda Lambert');
+    this.videoSearch('George Strait');
   }
 
   videoSearch(term) {

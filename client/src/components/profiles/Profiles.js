@@ -9,7 +9,7 @@ const Profiles = props => {
     getProfiles()
   },[getProfiles])
   return (
-    <div className="container mx-4">
+    <div className="container mx-4 postsOutside">
       {loading ? <Spinner/> : 
     <Fragment>
       <h1 className="large text-primary">Runners</h1>

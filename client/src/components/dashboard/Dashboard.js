@@ -5,19 +5,18 @@ import DashboardFunction from './DashboardFunction'
 import ExperienceDashboard from '../../containers/ExperienceDashboardContainer'
 import EducationDashboard from '../../containers/EducationDashboardContainer'
 import PropTypes from 'prop-types'
-// import { deleteAccount } from '../../redux/actions/Actions';
-
+import './css/dashboard.css'
 const Dashboard = (props) => {
   const { getCurrentProfile } = props
   useEffect(()=> {
     getCurrentProfile()
   },[getCurrentProfile])
   return (
-    props.auth.loading && props.profile === null ? <Spinner/> : <div className="container mx-4 "
+    props.auth.loading && props.profile === null ? <Spinner/> : <div className="container mx-4 dashboard "
     style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-      <h1 className="large text-primary">Profile</h1>
+      <h1 className="large ">Profile</h1>
       {/* //This will be here weather the person has a profile or not */}
-      <p className="lead">
+      <p className="lead text-dark">
       <i className="fas fa-user"></i>  Welcome {' '}
       {props.auth.user && props.auth.user.name}</p>
       {/* This wills show weather the user has a profile or not */}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import './css/form.css'
 
 const AddExperience = props => {
   const { addExperience, history } = props
@@ -28,8 +29,8 @@ const AddExperience = props => {
   }
 
   return (
-    <div className="container mx-4 my-6">
-      <h1 className="large text-primary">
+    <div className="container mx-4 my-6 formOutside">
+      <h1 className="large text-dark">
        Add An Experience
       </h1>
       <p className="lead">
@@ -68,8 +69,8 @@ const AddExperience = props => {
             onChange={e => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" className="btn btn-primary my-1" />
-        <Link className="btn btn-light my-1" to="/dashboard">Go Back</Link>
+        <input type="submit" className="btn btn-dark my-1" />
+        <Link className="btn btn-dark my-1" to="/dashboard">Go Back</Link>
       </form>
 
     </div>
