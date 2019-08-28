@@ -7,6 +7,7 @@ import ProfileExperience from './ProfileExperience'
 import ProfileEducation from './ProfileEducation'
 import PropTypes from 'prop-types'
 
+
 const Profile = props => {
   const { getProfileById, profile, auth, match } = props
   useEffect(()=> {

@@ -1,10 +1,27 @@
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types';
-import { Button, Paper, Typography } from '@material-ui/core'
+import { Button, Paper, Typography, Input } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    width: '70%',
+    margin: '8% auto ',
+    padding: '5%',
+    background: '#f5f5f5'
+  },
+  input: {
+    margin: theme.spacing(1),
+    width: '90%'
+  },
+}));
 
 const Register = (props) => {
+  const classes = useStyles()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,19 +47,21 @@ const Register = (props) => {
   }
 
   return (
-    <Paper className="container mx-4">
+    <Paper className={classes.container}>
     <Typography variant="h2" color="primary">Sign Up</Typography>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
       onSubmit={e => onSubmit(e)}>
         <div className="form-group">
-          <input type="text" placeholder="Name" name="name" value={name} 
+          <Input type="text" placeholder="Name" name="name" value={name} 
+          className={classes.input}
           onChange={e => onChange(e)}
            />
         </div>
         <div className="form-group">
-          <input type="email" placeholder="Email Address" name="email" 
+          <Input type="email" placeholder="Email Address" name="email" 
           value={email}
+          className={classes.input}
           onChange={e => onChange(e)}
           />
           <small className="form-text"
@@ -51,22 +70,22 @@ const Register = (props) => {
           >
         </div>
         <div className="form-group">
-          <input
+          <Input
             type="password"
             placeholder="Password"
             name="password"
-            
+            className={classes.input}
             value={password}
             onChange={e => onChange(e)}
            
           />
         </div>
         <div className="form-group">
-          <input
+          <Input 
             type="password"
             placeholder="Confirm Password"
             name="password2"
-            
+            className={classes.input}
             value={password2}
             onChange={e => onChange(e)}
            

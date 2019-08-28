@@ -14,7 +14,7 @@ const Dashboard = (props) => {
   },[getCurrentProfile])
   return (
     props.auth.loading && props.profile === null ? <Spinner/> : <Paper className="container mx-4 dashboard "
-    style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+    style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',background: '#f5f5f5'}}>
       <Typography variant="h2" color="primary">Profile</Typography>
       {/* //This will be here weather the person has a profile or not */}
       <Typography variant="h4">
