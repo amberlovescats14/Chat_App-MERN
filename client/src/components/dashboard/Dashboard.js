@@ -5,20 +5,22 @@ import DashboardFunction from './DashboardFunction'
 import ExperienceDashboard from '../../containers/ExperienceDashboardContainer'
 import EducationDashboard from '../../containers/EducationDashboardContainer'
 import PropTypes from 'prop-types'
-import './css/dashboard.css'
+import { Paper, Button, Typography } from '@material-ui/core'
+
 const Dashboard = (props) => {
   const { getCurrentProfile } = props
   useEffect(()=> {
     getCurrentProfile()
   },[getCurrentProfile])
   return (
-    props.auth.loading && props.profile === null ? <Spinner/> : <div className="container mx-4 dashboard "
+    props.auth.loading && props.profile === null ? <Spinner/> : <Paper className="container mx-4 dashboard "
     style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-      <h1 className="large ">Profile</h1>
+      <Typography variant="h2" color="primary">Profile</Typography>
       {/* //This will be here weather the person has a profile or not */}
-      <p className="lead text-dark">
-      <i className="fas fa-user"></i>  Welcome {' '}
-      {props.auth.user && props.auth.user.name}</p>
+      <Typography variant="h4">
+      <i className="fas fa-user" ></i>  Welcome {' '}
+      {props.auth.user && props.auth.user.name}</Typography>
+      <br/>
       {/* This wills show weather the user has a profile or not */}
       {props.profile !== null ?
       <Fragment>
@@ -27,10 +29,10 @@ const Dashboard = (props) => {
         <EducationDashboard/>
 
         <div className="my-2">
-        <button className="btn btn-danger"
+        <Button variant="contained" color="secondary"
         onClick={()=> props.deleteAccount()}>
         <i className="fas fa-user-minus"></i> Delete My Account
-        </button>
+        </Button>
         </div>
       </Fragment> :
       <Fragment>
@@ -38,7 +40,7 @@ const Dashboard = (props) => {
         <Link to='/create-profile' className="btn btn-primary my-1">
         Create Profile</Link>
       </Fragment>}
-    </div>
+    </Paper>
   )
 }
 

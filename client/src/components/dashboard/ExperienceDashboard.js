@@ -1,7 +1,17 @@
 import React, { Fragment } from 'react'
 import Moment from 'react-moment'
 import PropTypes from 'prop-types'
+import { Paper, Button, Typography } from '@material-ui/core'
 
+const styles = {
+  paper: {
+    width: 'auto',
+    padding: '2%'
+  },
+  heading: {
+    margin: '10px 0 10px 0'
+  }
+}
 
 const ExperienceDashboard = props => {
   const { experience, deleteExperience } = props
@@ -13,15 +23,16 @@ const ExperienceDashboard = props => {
         <Moment format='YYYY/MM/DD'>{exp.from}</Moment> 
       </td>
       <td>
-        <button className="btn btn-danger"
-        onClick={()=> deleteExperience(exp._id)}>Delete</button>
+        <Button variant="contained" color="secondary"
+        onClick={()=> deleteExperience(exp._id)}>Delete</Button>
       </td>
     </tr>
   ))
 
   return (
-    <div >
-      <h2 className="my-2 text-dark">Experience Credentials</h2>
+    <Paper style={styles.paper}>
+      <Paper>
+      <Typography variant="h5" color="primary" style={styles.heading}>Experience Credentials</Typography>
       <table className="table">
       <thead>
         <tr>
@@ -32,7 +43,8 @@ const ExperienceDashboard = props => {
       </thead>
       <tbody className="tableBody">{experiences}</tbody>
       </table>
-    </div>
+      </Paper>
+    </Paper>
   )
 }
 

@@ -1,7 +1,19 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import './css/form.css'
+import { Paper, Button, Typography } from '@material-ui/core'
+
+const styles = {
+  paper: {
+    padding: '5%',
+    width: '60%',
+    margin: '40px auto 0 auto'
+  },
+  button: {
+    marginLeft: '10px'
+  }
+}
+
 
 const AddEducation = props => {
   const { addEducation, history } = props
@@ -35,10 +47,10 @@ const AddEducation = props => {
   }
 
   return (
-    <div className="container mx-4 my-6 formOutside">
-      <h1 className="large text-dark">
+    <Paper style={styles.paper}>
+      <Typography variant="h2" color="primary">
        Add A Team
-      </h1>
+      </Typography>
       <p className="lead">
         <i className="fas fa-code-branch"></i> Tell us about your training experience
       </p>
@@ -96,11 +108,14 @@ const AddEducation = props => {
             onChange={e => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" className="btn btn-dark my-1" />
-        <Link className="btn btn-dark my-1" to="/dashboard">Go Back</Link>
+        <Button type="submit" variant="contained" style={styles.button}color="primary">Submit</Button>
+        <Link to="/dashboard">
+        <Button 
+        style={styles.button} variant="contained" color="primary">Go Back</Button>
+        </Link>
       </form>
 
-    </div>
+    </Paper>
   )
 }
 

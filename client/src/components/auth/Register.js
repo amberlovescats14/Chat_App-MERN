@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types';
+import { Button, Paper, Typography } from '@material-ui/core'
 
 
 const Register = (props) => {
@@ -29,8 +30,8 @@ const Register = (props) => {
   }
 
   return (
-    <div className="container mx-4">
-    <h1 className="large text-primary">Sign Up</h1>
+    <Paper className="container mx-4">
+    <Typography variant="h2" color="primary">Sign Up</Typography>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
       onSubmit={e => onSubmit(e)}>
@@ -71,13 +72,15 @@ const Register = (props) => {
            
           />
         </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
+        <Button type="submit" variant="contained" color="primary" >Register</Button>
       </form>
       <p className="my-1">
         Already have an account?   
-          <Link to='/login'>Sign In!</Link>
+          <Link to='/login'>
+          <Typography color="primary">Sign In!</Typography>
+          </Link>
       </p>    
-      </div>
+      </Paper>
   )
 }
 Register.propTypes = {

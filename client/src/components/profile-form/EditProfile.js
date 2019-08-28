@@ -1,8 +1,21 @@
 import React, { Fragment, useState,  useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import './css/form.css'
+import { Paper, Button, Typography } from '@material-ui/core'
 
+const styles = {
+  paper: {
+    padding: '5%',
+    width: '60%',
+    margin: '40px auto 0 auto'
+  },
+  button: {
+    marginLeft: '10px'
+  },
+  secondButton: {
+    background: '#f4f4f4'
+  }
+}
 const EditProfile = (props) => {
   const { getCurrentProfile, createProfile, profile, history} = props
   //THIS COMPONENT is called CreateProfile and the action is called createProfile
@@ -67,11 +80,11 @@ const EditProfile = (props) => {
     createProfile(formData, history, true)
   }
   return (
-    <div className="container formOutside">
+    <Paper style={styles.paper}>
     <section className="container">
-      <h1 className="large ">
+      <Typography variant="h2" color="primary">
         Edit Your Profile
-      </h1>
+      </Typography>
       <p className="lead">
         <i className="fas fa-user"></i> Tell us about yourself!
       </p>
@@ -132,12 +145,12 @@ const EditProfile = (props) => {
         </div>
 
         <div className="my-2">
-          <button
+          <Button style={styles.secondButton} variant="text"
           onClick={()=> toggleSocialInput(!displaySocialInputs)}
           type="button" className="btn btn-light">
             Add Social Network Links
-          </button>
-          <span>Optional</span>
+          </Button>
+          <span>  *Optional</span>
         </div>
           {displaySocialInputs &&
           <Fragment>
@@ -171,11 +184,13 @@ const EditProfile = (props) => {
         </div>
           </Fragment>}
         
-        <input type="submit" className="btn btn-dark my-1" />
-        <Link className="btn btn-dark my-1" to="dashboard">Go Back</Link>
+        <Button type="submit" variant="contained" style={styles.button}color="primary">Submit</Button>
+        <Link to="dashboard">
+        <Button variant="contained" color="primary" style={styles.button}> Go Back</Button>
+        </Link>
       </form>
       </section>
-    </div>
+    </Paper>
   )
 }
 

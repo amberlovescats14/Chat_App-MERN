@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { Paper, Typography, Button } from '@material-ui/core'
 
 
 const Login = (props) => {
@@ -23,8 +24,8 @@ const Login = (props) => {
     return <Redirect to="/dashboard" />
   }
   return (
-    <div className="container mx-4 postsOutside ">
-    <h1 className="large text-info ">LogIn</h1>
+    <Paper className="container mx-4 ">
+    <Typography variant="h2" color="primary">LogIn</Typography>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" 
       onSubmit={e => onSubmit(e)}>
@@ -49,13 +50,14 @@ const Login = (props) => {
             required
           />
         </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
+        <Button type="submit" variant="contained" color="primary" value="Login">Login</Button>
       </form>
       <p className="my-1">
         Don't have an account? 
-        <Link to='/register'>Sign Up!</Link>
+        <Link to='/register' >
+        <Typography color="primary">Sign Up!</Typography></Link>
       </p>    
-      </div>
+      </Paper>
   )
 }
 

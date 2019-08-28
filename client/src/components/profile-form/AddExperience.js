@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import './css/form.css'
+import { Paper, Button, Typography } from '@material-ui/core'
 
 const AddExperience = props => {
   const { addExperience, history } = props
@@ -11,6 +11,17 @@ const AddExperience = props => {
     from: '',
     description: ''
   })
+
+  const styles = {
+    paper: {
+      padding: '5%',
+      width: '60%',
+      margin: '40px auto 0 auto'
+    },
+    button: {
+      marginLeft: '10px'
+    }
+  }
 
   // const [toDateDisabled, toggleDisabled] = useState(false)
 
@@ -29,10 +40,10 @@ const AddExperience = props => {
   }
 
   return (
-    <div className="container mx-4 my-6 formOutside">
-      <h1 className="large text-dark">
+    <Paper style={styles.paper}>
+      <Typography variant="h2" color="primary">
        Add An Experience
-      </h1>
+      </Typography>
       <p className="lead">
         <i className="fas fa-code-branch"></i> Tell us about any races that you have been participated in
       </p>
@@ -69,11 +80,16 @@ const AddExperience = props => {
             onChange={e => onChange(e)}
           ></textarea>
         </div>
-        <input type="submit" className="btn btn-dark my-1" />
-        <Link className="btn btn-dark my-1" to="/dashboard">Go Back</Link>
+        <Button 
+        type="submit" style={styles.button}
+       variant="contained" color="primary" >Submit</Button>
+        <Link  to="/dashboard">
+        <Button 
+        style={styles.button} variant="contained" color="primary">Go Back</Button>
+        </Link>
       </form>
 
-    </div>
+    </Paper>
   )
 }
 

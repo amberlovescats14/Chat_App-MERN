@@ -13,7 +13,7 @@ const Posts = props => {
   }, [getPosts])
   return (
     loading ? <Spinner/> :
-    <div className="container mx-4 postsOutside">
+    <div className="container mx-4 ">
       <h1 className="large text-primary">Posts:</h1>
       <p className="lead">
       <i className="fas fa-user text-primary"></i> Welcome to the community!
